@@ -80,8 +80,7 @@ fi
 # }
 # trap _exit EXIT
 
-
-PS1="${Green}\w > ${NC}"
+PS1="${Green}${HOSTNAME:0:1} \w > ${NC}"
 
 export PATH=/usr/extbin:/home/z/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
@@ -201,7 +200,8 @@ function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 
 function wt() {  # weather
     echo -n "Weather in Bs. As.: "
-    curl -skL 'http://xml.weather.yahoo.com/forecastrss?w=468739&u=c' | sed -n 's/.*yweather:condition.*text="\([^"]*\)".*temp="\([^"]*\)".*/\1 \2C/p'
+    curl -skL 'http://xml.weather.yahoo.com/forecastrss?w=468739&u=c' \
+    | sed -n 's/.*yweather:condition.*text="\([^"]*\)".*temp="\([^"]*\)".*/\1 \2C/p'
 }
 
 function my_ip() # Get IP adress on ethernet.
