@@ -1,0 +1,67 @@
+#               Personnal Aliases
+#
+# - ABorgna
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p' # -> Prevents accidentally clobbering files.
+
+alias h='history'
+alias j='jobs -l'
+alias which='type -a'
+alias ..='cd ..'
+alias cls='clear'
+
+# Pretty-print of some PATH variables:
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+
+# Makes a more readable output.
+alias du='du -kh'
+alias df='df -kTh'
+
+# Randoms
+alias cloak='history -d $((HISTCMD-1)) &&'
+alias clk='tty-clock -c -C 7 -d 40000000'
+alias op='gnome-open'
+alias ftn='clear; fortune -ac; echo'
+alias music='ncmpcpp'
+alias mpdrestart='sudo mpd --kill; mpd'
+alias tt='sublimetext'
+alias weather='weather -m SABE'
+alias minicom='minicom -c'
+alias macChange='sudo ifconfig wlan0 down;
+                 sudo macchanger wlan0 -a;
+                 sudo ifconfig wlan0 up'
+
+# Special
+alias serialATduino='sudo miniterm.py -e -b 38400 -p /dev/ttyACM0'
+alias serialCommon='sudo miniterm.py -e -b 115200 -p /dev/ttyACM0'
+alias serialFastduino='sudo miniterm.py -e -b 1382400 -p /dev/ttyACM0'
+
+# The ls family
+#   Add colors for filetype and  human-readable sizes
+alias l='command ls -hp --color --group-directories-first'
+#   Directories first, with alphanumeric sorting:
+alias ll='l -Acv --group-directories-first'
+alias ls="l -lv --group-directories-first"
+alias la='ls -A'           #  Show hidden files.
+
+
+alias lx='l -lXB'         #  Sort by extension.
+alias lk='l -lSr'         #  Sort by size, biggest last.
+alias lt='l -ltr'         #  Sort by date, most recent last.
+alias lc='l -ltcr'        #  Sort by/show change time,most recent last.
+alias lu='l -ltur'        #  Sort by/show access time,most recent last.
+alias lr='ll -R'           #  Recursive ls.
+alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+
+
+#               Spelling typos
+
+alias xs='cd'
+alias vf='cd'
+alias moer='more'
+alias moew='more'
+alias kk='ll'
