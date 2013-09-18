@@ -71,6 +71,7 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 # Motd
 if [ -x /usr/games/fortune ]; then
+    echo
     /usr/games/fortune -acs
     echo
 fi
@@ -80,7 +81,15 @@ fi
 # }
 # trap _exit EXIT
 
-PS1="${Green}${HOSTNAME:0:1} \w > ${NC}"
+# Red prompt for root
+if [ $(id -u) -eq 0 ];
+then
+    psColor=${BRed}
+else
+    psColor=${Green}
+fi
+
+PS1="${psColor}${HOSTNAME:0:1} \w > ${NC}"
 
 export PATH=/usr/extbin:/home/z/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
