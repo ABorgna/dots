@@ -16,7 +16,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 if [ -f ~/.bash_alias ]; then
-      . ~/.bash_alias   # --> Read /etc/bashrc, if present.
+      . ~/.bash_alias   # --> Read .bash_alias, if present.
 fi
 
 

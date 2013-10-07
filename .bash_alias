@@ -23,6 +23,7 @@ alias df='df -kTh'
 
 # Randoms
 alias cloak='history -d $((HISTCMD-1)) &&'
+alias c='cloak'
 alias clk='tty-clock -c -C 7 -d 40000000'
 alias op='gnome-open'
 alias ftn='clear; fortune -ac; echo'
