@@ -1,0 +1,64 @@
+# Simple status bar
+
+general {
+        colors = true
+        color_good = "#b7ce42"
+        color_degraded = "#f07746"
+        color_bad = "#e84f4f"
+        interval = 5
+	output_format = "i3bar"
+}
+
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "battery 0"
+#order += "load"
+order += "cpu_usage"
+#order += "cpu_temperature 0"
+order += "volume master"
+order += "time"
+
+wireless wlan0 {
+        format_up = " w %ip @ %essid (%quality) "
+        format_down = ""
+}
+
+ethernet eth0 {
+        format_up = " e %ip (%speed) "
+        format_down = ""
+}
+
+disk /home {
+        format = " ~ %total (%free free) "
+}
+
+load {
+	format = " %5min "
+}
+
+cpu_usage {
+        format = " # %usage "
+}
+
+cpu_temperature 0 {
+#        ° ℃ ℉ ☀ ☠
+        format = " %degrees° "
+}
+
+battery 0 {
+        #format = " %status %percentage %remaining (%consumption)"
+        format = " b %percentage %remaining (%consumption)"
+	low_threshold = 10
+}
+
+time {
+        format = " %Y-%m-%d %H:%M "
+}
+
+volume master {
+#       ♪ 𝄞
+        format = " ♪ %volume "
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
