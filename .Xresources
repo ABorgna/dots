@@ -1,0 +1,53 @@
+
+! Transparency 
+! True transparency
+!URxvt*.depth: 32
+! Native transparency
+URxvt*.transparent: true
+
+! Font
+!URxvt*.font: 9x15
+URxvt*.font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-9
+
+! Colors
+!*foreground: White
+!*background: [50]#000000
+
+*foreground:#a0a0a0
+*background:[50]#1b1d1e
+
+*color0:           #3d3e3d
+*color8:           #5a5b5c
+
+*color1:           #755a5b
+*color9:           #a37679
+
+*color2:           #68755a
+*color10:          #87a376
+
+*color3:           #756e5a
+*color11:          #a39b76
+
+*color4:           #5b6976
+*color12:          #758ba3
+
+*color5:           #755b76
+*color13:          #9f76a3
+
+*color6:           #465457
+*color14:          #899ca1
+
+*color7:           #ccccc6
+*color15:          #f8f8f2
+
+
+! True: enable the scrollbar [default]; option -sb. False: disable
+URxvt*.scrollBar: false
+
+URxvt*.perl-ext-common: default,matcher
+
+! URLs
+URxvt*.url-launcher: /usr/bin/xdg-open
+URxvt*.matcher.button: 1
+URxvt*.colorUL: #4682B4
+
