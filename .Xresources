@@ -4,6 +4,7 @@
 !URxvt*.depth: 32
 ! Native transparency
 URxvt*.transparent: true
+URxvt*.shading: 66
 
 ! Font
 !URxvt*.font: 9x15
@@ -13,32 +14,35 @@ URxvt*.font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-9
 !*foreground: White
 !*background: [50]#000000
 
-*foreground:#a0a0a0
-*background:[50]#1b1d1e
+*foreground:#D2C5BC 
+!*background:[50]#101010
+*background:#101010
 
-*color0:           #3d3e3d
-*color8:           #5a5b5c
+*.cursorColor:	   #202020
 
-*color1:           #755a5b
-*color9:           #a37679
+*color0:           #202020
+*color8:           #606060
 
-*color2:           #68755a
-*color10:          #87a376
+*color1:           #B91E2E
+*color9:           #D14548
 
-*color3:           #756e5a
-*color11:          #a39b76
+*color2:           #81957C
+*color10:          #A7B79A
 
-*color4:           #5b6976
-*color12:          #758ba3
+*color3:           #F9BB80
+*color11:          #FAE3A0
 
-*color5:           #755b76
-*color13:          #9f76a3
+*color4:           #356579
+*color12:          #7491A1
 
-*color6:           #465457
-*color14:          #899ca1
+*color5:           #2D2031
+*color13:          #87314E
 
-*color7:           #ccccc6
-*color15:          #f8f8f2
+*color6:           #0B3452
+*color14:          #0F829D
+
+*color7:           #909090
+*color15:          #FFF0F0
 
 
 ! True: enable the scrollbar [default]; option -sb. False: disable
