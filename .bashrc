@@ -70,9 +70,9 @@ NC="\e[m"               # Color Reset
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
 # Motd
-if [ -x /usr/games/fortune ]; then
+if [ -x /usr/bin/fortune -o -x /usr/games/fortune ]; then
     echo
-    /usr/games/fortune -acs
+    fortune -acs
     echo
 fi
 
@@ -112,16 +112,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[00;42;30m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;30m'
-
-
-#               Run in background
-
-function soffice() { command soffice "$@" & }
-function firefox() { command firefox "$@" & }
-function opera() { command opera "$@" & }
-function xpdf() { command xpdf "$@" & }
-function tt() { command sublimetext "$@" & }
-function pdf() { command evince "$@" & }
 
 
 #               File & strings related functions:

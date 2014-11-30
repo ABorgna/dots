@@ -36,18 +36,13 @@ alias macChange='sudo ifconfig wlan0 down;
                  sudo macchanger wlan0 -a;
                  sudo ifconfig wlan0 up'
 
-# Special
-alias serialATduino='sudo miniterm.py -e -b 38400 -p /dev/ttyACM0'
-alias serialCommon='sudo miniterm.py -e -b 115200 -p /dev/ttyACM0'
-alias serialFastduino='sudo miniterm.py -e -b 1382400 -p /dev/ttyACM0'
-
 # The ls family
 #   Add colors for filetype and  human-readable sizes
 alias l='command ls -hp --color --group-directories-first'
 #   Directories first, with alphanumeric sorting:
-alias ll='l -Acv --group-directories-first'
-alias ls="l -lv --group-directories-first"
-alias la='ls -A'           #  Show hidden files.
+alias ll='l -lAcv'
+alias ls="l -lv"
+alias la='l -A'           #  Show hidden files.
 
 
 alias lx='l -lXB'         #  Sort by extension.
@@ -59,8 +54,7 @@ alias lr='ll -R'           #  Recursive ls.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
 
-#               Spelling typos
-
+# (Qwerty) Spelling typos
 alias xs='cd'
 alias vf='cd'
 alias moer='more'

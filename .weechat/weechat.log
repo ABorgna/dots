@@ -1,0 +1,41 @@
+[2014-08-24 15:35:15] WeeChat 1.0 (compiled on Aug 17 2014 06:16:50)
+[2014-08-24 15:35:15] Reading configuration file sec.conf
+[2014-08-24 15:35:15] Reading configuration file weechat.conf
+[2014-08-24 15:35:15] Reading configuration file plugins.conf
+[2014-08-24 15:35:15] Writing configuration file exec.conf (default options)
+[2014-08-24 15:35:15] Reading configuration file exec.conf
+[2014-08-24 15:35:15] Writing configuration file trigger.conf (default options)
+[2014-08-24 15:35:15] Reading configuration file trigger.conf
+[2014-08-24 15:35:17] Reading configuration file xfer.conf
+[2014-08-24 15:35:18] Reading configuration file iset.conf
+[2014-08-24 15:35:18] Reading configuration file buffers.conf
+[2014-08-24 15:35:18] Reading configuration file aspell.conf
+[2014-08-24 15:35:18] Reading configuration file charset.conf
+[2014-08-24 15:35:18] Reading configuration file irc.conf
+[2014-08-24 15:35:18] Reading configuration file script.conf
+[2014-08-24 15:35:18] Reading configuration file relay.conf
+[2014-08-24 15:35:18] Reading configuration file logger.conf
+[2014-08-24 15:35:18] Reading configuration file alias.conf
+[2014-08-24 15:49:52] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 23:49:09] irc: connecting to server chat.freenode.net/6667...
+[2014-08-26 13:31:15] irc: connecting to server chat.freenode.net/6667...
+[2014-08-27 22:22:04] irc: connecting to server chat.freenode.net/6667...
+[2014-08-28 08:04:50] irc: connecting to server chat.freenode.net/6667...
+[2014-08-30 01:31:15] irc: connecting to server chat.freenode.net/6667...
+[2014-08-30 18:05:11] Terminal lost, exiting WeeChat...
+[2014-08-30 18:05:11] Writing configuration file plugins.conf
+[2014-08-30 18:05:11] Writing configuration file alias.conf
+[2014-08-30 18:05:12] Signal SIGHUP received, exiting WeeChat...
+[2014-08-30 18:05:12] Writing configuration file logger.conf
+[2014-08-30 18:05:12] Writing configuration file relay.conf
+[2014-08-30 18:05:12] Writing configuration file script.conf
+[2014-08-30 18:05:12] Writing configuration file irc.conf
+[2014-08-30 18:05:12] Writing configuration file charset.conf
+[2014-08-30 18:05:12] Writing configuration file aspell.conf
+[2014-08-30 18:05:12] Writing configuration file buffers.conf
+[2014-08-30 18:05:12] Writing configuration file iset.conf
+[2014-08-30 18:05:13] Writing configuration file xfer.conf
+[2014-08-30 18:05:13] Writing configuration file trigger.conf
+[2014-08-30 18:05:13] Writing configuration file exec.conf
+[2014-08-30 18:05:13] Writing configuration file weechat.conf
+[2014-08-30 18:05:13] Writing configuration file sec.conf
