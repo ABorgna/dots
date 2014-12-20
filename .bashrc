@@ -97,6 +97,9 @@ export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
 export HOSTFILE=$HOME/.hosts
+export EDITOR='/usr/bin/vim'
+export GIT_EDITOR='/usr/bin/vim'
+export IRC_CLIENT='weechat'
 
 
 #               Tailoring 'less'
