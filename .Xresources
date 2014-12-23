@@ -11,38 +11,34 @@ URxvt*.shading: 66
 URxvt*.font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-9
 
 ! Colors
-!*foreground: White
-!*background: [50]#000000
-
 *foreground:#D2C5BC 
 !*background:[50]#101010
 *background:#101010
+*.cursorColor:	   #808080
 
-*.cursorColor:	   #202020
+*color0:           #424242
+*color8:           #363636
 
-*color0:           #202020
-*color8:           #606060
+*color1:           #DC322F
+*color9:           #CB2C16
 
-*color1:           #B91E2E
-*color9:           #D14548
+*color2:           #479900
+*color10:          #587558
 
-*color2:           #81957C
-*color10:          #A7B79A
+*color3:           #B58900
+*color11:          #837C65
 
-*color3:           #F9BB80
-*color11:          #FAE3A0
+*color4:           #268BD2
+*color12:          #628295
 
-*color4:           #356579
-*color12:          #7491A1
+*color5:           #D33682
+*color13:          #C46CBD
 
-*color5:           #2D2031
-*color13:          #87314E
+*color6:           #2AA198
+*color14:          #93A1A1
 
-*color6:           #0B3452
-*color14:          #0F829D
-
-*color7:           #909090
-*color15:          #FFF0F0
+*color7:           #FFF0F0
+*color15:          #FDF6E3
 
 
 ! True: enable the scrollbar [default]; option -sb. False: disable
