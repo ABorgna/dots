@@ -11,7 +11,8 @@ general {
 
 order += "wireless wlan0"
 order += "ethernet eth0"
-order += "battery 0"
+order += "ethernet enp5s0"
+#order += "battery 0"
 #order += "load"
 order += "cpu_usage"
 #order += "cpu_temperature 0"
@@ -26,6 +27,11 @@ wireless wlan0 {
 ethernet eth0 {
         format_up = " e %ip (%speed) "
         format_down = ""
+}
+
+ethernet enp5s0 {
+    format_up = " e %ip (%speed) "
+    format_down = ""
 }
 
 disk /home {

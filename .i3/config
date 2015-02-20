@@ -12,13 +12,16 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 new_window 1pixel
 
 # default split
-default_orientation horizontal
+default_orientation auto
+
+# Hide borders adjacent to the screen edges
+hide_edge_borders both
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -27,10 +30,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindcode $mod+44 focus left
+bindcode $mod+45 focus down
+bindcode $mod+46 focus up
+bindcode $mod+47 focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -39,10 +42,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindcode $mod+Shift+44 move left
+bindcode $mod+Shift+45 move down
+bindcode $mod+Shift+46 move up
+bindcode $mod+Shift+47 move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -51,10 +54,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # move workspace to next window
-bindsym $mod+Shift+Control+j move workspace to output left
-bindsym $mod+Shift+Control+k move workspace to output down
-bindsym $mod+Shift+Control+l move workspace to output up
-bindsym $mod+Shift+Control+semicolon move workspace to output right
+bindcode $mod+Shift+Control+44 move workspace to output left
+bindcode $mod+Shift+Control+45 move workspace to output down
+bindcode $mod+Shift+Control+46 move workspace to output up
+bindcode $mod+Shift+Control+47 move workspace to output right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Control+Left move workspace to output left
@@ -89,28 +92,28 @@ bindsym $mod+a focus parent
 bindsym $mod+s focus child
 
 # switch to workspace
-bindsym $mod+1 workspace t
-bindsym $mod+2 workspace w
-bindsym $mod+3 workspace c
-bindsym $mod+4 workspace m
-bindsym $mod+5 workspace r
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace ?
-bindsym $mod+9 workspace ↕
-bindsym $mod+0 workspace ฿
+bindcode $mod+10 workspace t
+bindcode $mod+11 workspace w
+bindcode $mod+12 workspace c
+bindcode $mod+13 workspace m
+bindcode $mod+14 workspace r
+bindcode $mod+15 workspace 6
+bindcode $mod+16 workspace 7
+bindcode $mod+17 workspace ?
+bindcode $mod+18 workspace ↕
+bindcode $mod+19 workspace ฿
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move container to workspace t
-bindsym $mod+Shift+at move container to workspace w
-bindsym $mod+Shift+numbersign move container to workspace c
-bindsym $mod+Shift+dollar move container to workspace m
-bindsym $mod+Shift+percent move container to workspace r
-bindsym $mod+Shift+asciicircum move container to workspace 6
-bindsym $mod+Shift+ampersand move container to workspace 7
-bindsym $mod+Shift+asterisk move container to workspace ?
-bindsym $mod+Shift+parenleft move container to workspace ↕
-bindsym $mod+Shift+parenright move container to workspace ฿
+bindcode $mod+Shift+10 move container to workspace t
+bindcode $mod+Shift+11 move container to workspace w
+bindcode $mod+Shift+12 move container to workspace c
+bindcode $mod+Shift+13 move container to workspace m
+bindcode $mod+Shift+14 move container to workspace r
+bindcode $mod+Shift+15 move container to workspace 6
+bindcode $mod+Shift+16 move container to workspace 7
+bindcode $mod+Shift+17 move container to workspace ?
+bindcode $mod+Shift+18 move container to workspace ↕
+bindcode $mod+Shift+19 move container to workspace ฿
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -154,8 +157,8 @@ bindsym $mod+r mode "resize"
 # Colors
 client.background       #282828
 #                       border  bg      text    indicator
-client.focused          #aaccbb #66aabb #f2f1f0 #2e9ef4
-client.focused_inactive #666666 #666666 #f2f1f0 #484e50
+client.focused          #0077aa #333333 #f2f1f0 #2e9ef4
+client.focused_inactive #335577 #222222 #f2f1f0 #484e50
 client.unfocused        #666666 #222222 #888888 #292d2e
 client.urgent           #d23d3d #f07746 #f2f1f0 #900000
 
@@ -176,19 +179,33 @@ bar {
         status_command i3status -c ~/.i3/i3status
 }
 
+
 # Auto execs
 
 # Applets and services
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --daemonize --login
-exec --no-startup-id nm-applet
-exec --no-startup-id gnome-sound-applet
+#exec --no-startup-id gnome-settings-daemon
+#exec --no-startup-id /usr/bin/gnome-keyring-daemon --daemonize --login
+#exec --no-startup-id nm-applet
+#exec --no-startup-id gnome-sound-applet
 #exec --no-startup-id bluetooth-applet
 
 # Programs
-exec --no-startup-id minidlna
-exec --no-startup-id dropbox start
-exec --no-startup-id everpad
+#exec --no-startup-id minidlna
+#exec --no-startup-id dropbox start
+#exec --no-startup-id everpad
 
-# Set black background
+# Set background
 #exec --no-startup-id xsetroot -solid "#080008"
+exec --no-startup-id eval $(cat ~/.fehbg)
+
+
+# XFCE4 utilities
+exec --no-startup-id xfce4-session
+for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
+# shutdown menu
+bindsym $mod+Shift+p exec xfce4-session-logout
+# xfce settings
+#bindsym $mod+Shift+c exec xfce4-settings-manager
+
+# Load Xresources
+exec xrdb -merge ~/.Xresources
