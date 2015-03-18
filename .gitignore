@@ -1,1 +1,3 @@
 .weechat/logs/*
+.vim/backups/*
+

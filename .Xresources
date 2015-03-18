@@ -1,7 +1,7 @@
 
 ! Transparency 
 ! True transparency
-!URxvt*.depth: 32
+!URxvt*.depth: 24
 ! Native transparency
 URxvt*.transparent: true
 URxvt*.shading: 66
