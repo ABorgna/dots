@@ -8,7 +8,8 @@ set autoread
 set showmode
 set history=1000
 set showcmd
- 
+set browsedir=buffer
+inoremap ., <Esc>
 
 " ================ Search ===========================
 
