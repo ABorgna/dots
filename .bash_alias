@@ -56,9 +56,7 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 # Utils
 alias suvim='sudo vim -u $HOME/.vimrc'
 
-# (Qwerty) Spelling typos
-alias xs='cd'
-alias vf='cd'
-alias moer='more'
-alias moew='more'
-alias kk='ll'
+# Swap key bindings
+alias aoe='setxkbmap us intl'
+alias asd='setxkbmap us dvp'
+
