@@ -58,5 +58,5 @@ alias suvim='sudo vim -u $HOME/.vimrc'
 
 # Swap key bindings
 alias aoe='setxkbmap us intl'
-alias asd='setxkbmap us dvp'
+alias asd='setxkbmap us dvp -option "ctrl:nocaps"'
 
