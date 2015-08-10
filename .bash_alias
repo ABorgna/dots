@@ -21,6 +21,9 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'
 alias df='df -kTh'
 
+# Compilers
+function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
+
 # Randoms
 alias cloak='history -d $((HISTCMD-1)) &&'
 alias c='cloak'
