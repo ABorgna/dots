@@ -1,3 +1,7 @@
+*.log
+
 .weechat/logs/*
+.weechat/script/*
 .vim/backups/*
 
+*.swp
