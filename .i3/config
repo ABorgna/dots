@@ -209,3 +209,4 @@ bindsym $mod+Shift+p exec xfce4-session-logout
 
 # Load Xresources
 exec xrdb -merge ~/.Xresources
+exec /bin/bash ~/.fehbg
