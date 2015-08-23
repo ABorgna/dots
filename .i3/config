@@ -30,10 +30,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
 # change focus
-bindcode $mod+44 focus left
-bindcode $mod+45 focus down
-bindcode $mod+46 focus up
-bindcode $mod+47 focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -42,10 +42,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindcode $mod+Shift+44 move left
-bindcode $mod+Shift+45 move down
-bindcode $mod+Shift+46 move up
-bindcode $mod+Shift+47 move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -54,10 +54,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # move workspace to next window
-bindcode $mod+Shift+Control+44 move workspace to output left
-bindcode $mod+Shift+Control+45 move workspace to output down
-bindcode $mod+Shift+Control+46 move workspace to output up
-bindcode $mod+Shift+Control+47 move workspace to output right
+bindsym $mod+Shift+Control+h move workspace to output left
+bindsym $mod+Shift+Control+j move workspace to output down
+bindsym $mod+Shift+Control+k move workspace to output up
+bindsym $mod+Shift+Control+l move workspace to output right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Control+Left move workspace to output left
@@ -66,7 +66,7 @@ bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -97,8 +97,8 @@ bindcode $mod+11 workspace w
 bindcode $mod+12 workspace c
 bindcode $mod+13 workspace m
 bindcode $mod+14 workspace r
-bindcode $mod+15 workspace 6
-bindcode $mod+16 workspace 7
+bindcode $mod+15 workspace ᗧ
+bindcode $mod+16 workspace ᗣ
 bindcode $mod+17 workspace ?
 bindcode $mod+18 workspace ↕
 bindcode $mod+19 workspace ฿
@@ -109,8 +109,8 @@ bindcode $mod+Shift+11 move container to workspace w
 bindcode $mod+Shift+12 move container to workspace c
 bindcode $mod+Shift+13 move container to workspace m
 bindcode $mod+Shift+14 move container to workspace r
-bindcode $mod+Shift+15 move container to workspace 6
-bindcode $mod+Shift+16 move container to workspace 7
+bindcode $mod+Shift+15 move container to workspace ᗧ
+bindcode $mod+Shift+16 move container to workspace ᗣ
 bindcode $mod+Shift+17 move container to workspace ?
 bindcode $mod+Shift+18 move container to workspace ↕
 bindcode $mod+Shift+19 move container to workspace ฿
