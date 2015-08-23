@@ -11,6 +11,7 @@ set history=1000
 set showcmd
 set browsedir=buffer
 set wildmenu    " Show command autocomplete in a menu
+set clipboard=unnamed
 inoremap ., <Esc>
 
 " ================ Search ===========================
@@ -43,18 +44,22 @@ set backspace=indent,eol,start	" Backspace behaviour
 
 syntax on
 
-"
 " ================ Scrolling ========================
 set scrolloff=8 "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
+" ================ Directories ======================
+set backup
+silent !mkdir ~/.vim/backups/back/ > /dev/null 2>&1
+set backupdir=~/.vim/backups/back/
+silent !mkdir ~/.vim/backups/swp/ > /dev/null 2>&1
+set dir=~/.vim/backups/swp/
+
+" Persistent Undo
 if has('persistent_undo')
-    silent !mkdir ~/.vim/backups > /dev/null 2>&1
-    set undodir=~/.vim/backups
+    silent !mkdir ~/.vim/backups/undo/ > /dev/null 2>&1
+    set undodir=~/.vim/backups/undo/
     set undofile
     endif
 
@@ -64,6 +69,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
 
 Plug '~/.vimrc/plugin/autoclose.vim'
+
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

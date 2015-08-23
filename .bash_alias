@@ -13,6 +13,8 @@ alias which='type -a'
 alias ..='cd ..'
 alias cls='clear'
 
+alias vim='nvim'
+
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
@@ -46,8 +48,6 @@ alias l='command ls -hp --color --group-directories-first'
 alias ll='l -lAcv'
 alias ls="l -lv"
 alias la='l -A'           #  Show hidden files.
-
-
 alias lx='l -lXB'         #  Sort by extension.
 alias lk='l -lSr'         #  Sort by size, biggest last.
 alias lt='l -ltr'         #  Sort by date, most recent last.
@@ -55,9 +55,6 @@ alias lc='l -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='l -ltur'        #  Sort by/show access time,most recent last.
 alias lr='ll -R'           #  Recursive ls.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-
-# Utils
-alias suvim='sudo vim -u $HOME/.vimrc'
 
 # Swap key bindings
 alias aoe='setxkbmap us intl'
