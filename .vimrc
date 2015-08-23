@@ -1,21 +1,22 @@
 set nocompatible
 
-set number	" Show line numbers
+"set number	" Show line numbers
+set relativenumber
 set linebreak	" Break lines at word (requires Wrap lines)
-set showmatch	" Highlight matching brace
+set showmatch	" jighlight matching brace
 set visualbell	" Use visual bell (no beeping)
 set autoread
 set showmode
 set history=1000
 set showcmd
 set browsedir=buffer
+set wildmenu    " Show command autocomplete in a menu
 inoremap ., <Esc>
 
 " ================ Search ===========================
 
 set hlsearch	" Highlight all search results
 set smartcase	" Enable smart-case search
-set ignorecase	" Always case-insensitive
 set incsearch	" Searches for strings incrementally
 
 " ================ Indentation ======================
@@ -29,10 +30,14 @@ set softtabstop=4	" Number of spaces per Tab
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
- 
+
+" =============== Colors ============================
+set t_Co=256
+colorscheme monokai
+
 " =============== Advanced ==========================
 set ruler	" Show row and column ruler information
- 
+
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
@@ -52,4 +57,16 @@ if has('persistent_undo')
     set undodir=~/.vim/backups
     set undofile
     endif
+
+" ================ Plugins ==========================
+call plug#begin('~/.vim/plugged')
+
+Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
+
+Plug '~/.vimrc/plugin/autoclose.vim'
+
+call plug#end()
+
+" ================ YouCompleteMe plugin =============
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 

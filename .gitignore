@@ -3,5 +3,6 @@
 .weechat/logs/*
 .weechat/script/*
 .vim/backups/*
+.vim/plugged/*
 
 *.swp

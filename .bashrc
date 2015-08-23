@@ -101,6 +101,10 @@ export EDITOR='/usr/bin/vim'
 export GIT_EDITOR='/usr/bin/vim'
 export IRC_CLIENT='weechat'
 
+# Set term to a 256 colors
+if [ "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
 
 #               Tailoring 'less'
 
