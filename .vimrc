@@ -67,13 +67,15 @@ if has('persistent_undo')
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
-
 Plug '~/.vimrc/plugin/autoclose.vim'
-
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
 " ================ YouCompleteMe plugin =============
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+" ================ GitGutter plugin =================
+let g:gitgutter_updatetime = 750
 
