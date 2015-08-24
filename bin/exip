@@ -1,0 +1,5 @@
+#!/bin/bash
+# Print the external ip to stdout
+curl ipecho.net/plain
+echo
+

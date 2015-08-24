@@ -16,7 +16,7 @@ alias cls='clear'
 alias vim='nvim'
 
 # Tmux
-alias tm='~/.dots/scripts/tm.sh'
+alias tm='~/.dots/bin/tm'
 alias ta='tmux attach'
 alias tns='tmux new-session -s'
 
