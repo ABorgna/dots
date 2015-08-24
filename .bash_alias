@@ -15,6 +15,11 @@ alias cls='clear'
 
 alias vim='nvim'
 
+# Tmux
+alias tm='~/.dots/scripts/tm.sh'
+alias ta='tmux attach'
+alias tns='tmux new-session -s'
+
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
