@@ -8,7 +8,9 @@ URxvt*.shading: 66
 
 ! Font
 !URxvt*.font: 9x15
-URxvt*.font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-9
+URxvt*.font: xft:Terminus:style=Regular:antialias=false, \
+             xft:DejaVu Sans Mono for Powerline:antialias=false \
+             xft:Sans:antialias=false
 
 ! Colors
 *foreground:#D2C5BC 
