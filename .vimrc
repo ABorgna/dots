@@ -1,6 +1,6 @@
 set nocompatible
 
-"set number	" Show line numbers
+set number	" Show line numbers
 set relativenumber
 set linebreak	" Break lines at word (requires Wrap lines)
 set showmatch	" jighlight matching brace
@@ -49,6 +49,16 @@ set scrolloff=8 "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" ================ Keys =============================
+
+" Use ctrl-[hjkl] to select the active split!
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+" Neovi workaround
+nnoremap <silent> <BS> :wincmd h<CR>
+
 " ================ Directories ======================
 set backup
 silent !mkdir ~/.vim/backups/back/ > /dev/null 2>&1
@@ -67,15 +77,30 @@ if has('persistent_undo')
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
-Plug '~/.vimrc/plugin/autoclose.vim'
+Plug '~/.vim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'lervag/vimtex'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+if has('nvim')
+    Plug 'jalvesaq/Nvim-R'
+else
+    Plug 'vim-scripts/Vim-R-plugin'
+endif
 
 call plug#end()
 
-" ================ YouCompleteMe plugin =============
+" ================ YouCompleteMe ====================
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
-" ================ GitGutter plugin =================
+" ================ GitGutter ========================
 let g:gitgutter_updatetime = 750
+
+" ================ Vimtex ===========================
+let g:tex_flavor = 'latex'
+
+" ================ NERDTree =========================
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
