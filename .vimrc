@@ -1,5 +1,7 @@
 set nocompatible
 
+let mapleader = ","
+let maplocalleader = ","
 set number	" Show line numbers
 set relativenumber
 set linebreak	" Break lines at word (requires Wrap lines)
@@ -76,7 +78,7 @@ if has('persistent_undo')
 " ================ Plugins ==========================
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
+"Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
 Plug '~/.vim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
