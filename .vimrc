@@ -61,8 +61,15 @@ nnoremap <silent> <C-l> :wincmd l<CR>
 " Neovim workaround
 nnoremap <silent> <BS> :wincmd h<CR>
 
+nnoremap <silent> <C-A-k> :resize -1<CR>
+nnoremap <silent> <C-A-j> :resize +1<CR>
+nnoremap <silent> <C-A-h> :vertical resize -1<CR>
+nnoremap <silent> <C-A-l> :vertical resize +1<CR>
+" Neovim workaround
+nnoremap <silent> <A-BS> :vertical resize -1<CR>
+
 " I keep doing this >.<
-command W w
+command! W w
 
 " ================ Directories ======================
 set backup
@@ -81,7 +88,7 @@ if has('persistent_undo')
 " ================ Plugins ==========================
 call plug#begin('~/.vim/plugged')
 
-"Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
 Plug '~/.vim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
