@@ -1,4 +1,4 @@
-set nocompatible
+    set nocompatible
 
 let mapleader = ","
 let maplocalleader = ","
@@ -89,6 +89,7 @@ if has('persistent_undo')
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug '~/.vim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
