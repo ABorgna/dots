@@ -6,3 +6,6 @@
 .vim/plugged/*
 
 *.swp
+
+*.secret
+
