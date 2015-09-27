@@ -45,7 +45,6 @@ alias minicom='minicom -c'
 alias macChange='sudo ifconfig wlan0 down;
                  sudo macchanger wlan0 -a;
                  sudo ifconfig wlan0 up'
-alias weechat='if [ -f ~/.dots/.weechat/init.secret ]; then source ~/.dots/.weechat/init.secret; fi; weechat'
 
 # The ls family
 #   Add colors for filetype and  human-readable sizes
