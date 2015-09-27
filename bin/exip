@@ -1,5 +1,5 @@
 #!/bin/bash
 # Print the external ip to stdout
-curl ipecho.net/plain
+curl checkip.amazonaws.com
 echo
 
