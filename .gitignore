@@ -2,6 +2,7 @@
 
 .weechat/logs/*
 .weechat/script/*
+.weechat/urlserver*
 .vim/backups/*
 .vim/plugged/*
 
