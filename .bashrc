@@ -71,9 +71,7 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 # Motd
 if [ -x /usr/bin/fortune -o -x /usr/games/fortune ]; then
-    echo
-    fortune -acs
-    echo
+    ftn
 fi
 
 # function _exit()              # Function to run upon exit of shell.
@@ -101,7 +99,7 @@ export EDITOR='/usr/bin/vim'
 export GIT_EDITOR='/usr/bin/vim'
 export IRC_CLIENT='weechat'
 
-# Set term to a 256 colors
+# Feel the rainbow
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
@@ -122,39 +120,6 @@ export LESS_TERMCAP_us=$'\e[1;30m'
 
 
 #               File & strings related functions:
-
-
-# Find a file with a pattern in name:
-function ff() { find . -type f -iname '*'"$*"'*' -ls ; }
-
-# Find a file with pattern $1 in name and Execute $2 on it:
-function fe() { find . -type f -iname '*'"${1:-}"'*' \
--exec ${2:-file} {} \;  ; }
-
-#  Find a pattern in a set of files and highlight them:
-function fstr()
-{
-    OPTIND=1
-    local mycase=""
-    local usage="fstr: find string in files.
-Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
-    while getopts :it opt
-    do
-        case "$opt" in
-           i) mycase="-i " ;;
-           *) echo "$usage"; return ;;
-        esac
-    done
-    shift $(( $OPTIND - 1 ))
-    if [ "$#" -lt 1 ]; then
-        echo "$usage"
-        return;
-    fi
-    find . -type f -name "${2:-*}" -print0 | \
-xargs -0 egrep --color=always -sn ${case} "$1" 2>&- | more
-
-}
-
 
 function swap()
 { # Swap 2 filenames around, if they exist (from Uzi's bashrc).
