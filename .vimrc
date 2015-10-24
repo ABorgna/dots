@@ -96,6 +96,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'christoomey/vim-tmux-navigator'
 
 if has('nvim')
     Plug 'jalvesaq/Nvim-R'
