@@ -73,24 +73,24 @@ command! W w
 
 " ================ Directories ======================
 set backup
-silent !mkdir ~/.vim/backups/back/ > /dev/null 2>&1
-set backupdir=~/.vim/backups/back/
-silent !mkdir ~/.vim/backups/swp/ > /dev/null 2>&1
-set dir=~/.vim/backups/swp/
+silent !mkdir ~/.config/nvim/backups/back/ > /dev/null 2>&1
+set backupdir=~/.config/nvim/backups/back/
+silent !mkdir ~/.config/nvim/backups/swp/ > /dev/null 2>&1
+set dir=~/.config/nvim/backups/swp/
 
 " Persistent Undo
 if has('persistent_undo')
-    silent !mkdir ~/.vim/backups/undo/ > /dev/null 2>&1
-    set undodir=~/.vim/backups/undo/
+    silent !mkdir ~/.config/nvim/backups/undo/ > /dev/null 2>&1
+    set undodir=~/.config/nvim/backups/undo/
     set undofile
     endif
 
 " ================ Plugins ==========================
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug '~/.vim/plugin/autoclose.vim'
+Plug '~/.config/nvim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
