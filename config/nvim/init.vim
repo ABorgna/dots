@@ -1,4 +1,4 @@
-    set nocompatible
+set nocompatible
 
 let mapleader = ","
 let maplocalleader = ","
@@ -97,6 +97,7 @@ Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'szw/vim-tags'
 
 if has('nvim')
     Plug 'jalvesaq/Nvim-R'
@@ -117,4 +118,10 @@ let g:tex_flavor = 'latex'
 
 " ================ NERDTree =========================
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['.lo$[[file]]','.la$[[file]]',  '.lo$[[file]]', '.o$[[file]]', '.pyc$[[file]]']
+" Autoclose if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Autoopen when vim starts up with no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
