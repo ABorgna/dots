@@ -37,16 +37,13 @@ function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
 alias cloak='history -d $((HISTCMD-1)) &&'
 alias c='cloak'
 alias clk='tty-clock -c -C 7 -d 40000000'
-alias op='xdg-open || gnome-open'
 alias ftn='clear; fortune -ace; echo'
 alias music='ncmpcpp'
 alias mpdrestart='sudo mpd --kill; mpd'
 alias tt='sublimetext'
 alias weather='weather -m SABE'
 alias minicom='minicom -c'
-alias macChange='sudo ifconfig wlan0 down;
-                 sudo macchanger wlan0 -a;
-                 sudo ifconfig wlan0 up'
+alias cal='cal -3'
 
 # The ls family
 #   Add colors for filetype and  human-readable sizes
