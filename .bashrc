@@ -96,7 +96,7 @@ export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
 export HISTCONTROL=ignoredups
 export HOSTFILE=$HOME/.hosts
 export EDITOR='/usr/bin/nvim'
-export GIT_EDITOR='/usr/bin/vim'
+export GIT_EDITOR='/usr/bin/nvim'
 export IRC_CLIENT='weechat'
 
 # Feel the rainbow
