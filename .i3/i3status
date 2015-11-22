@@ -9,11 +9,7 @@ general {
 	output_format = "i3bar"
 }
 
-order += "wireless wlan0"
-order += "wireless wlp4s0"
-order += "ethernet eth0"
 order += "ethernet enp5s0"
-order += "battery 0"
 #order += "load"
 order += "cpu_usage"
 #order += "cpu_temperature 0"

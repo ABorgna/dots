@@ -9,9 +9,8 @@ alias mkdir='mkdir -p' # -> Prevents accidentally clobbering files.
 
 alias h='history'
 alias j='jobs -l'
-alias which='type -a'
 alias ..='cd ..'
-alias cls='clear'
+alias cls='clear' # C-l works too if you are not in tmux
 
 alias vim='nvim'
 
