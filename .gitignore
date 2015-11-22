@@ -3,8 +3,8 @@
 .weechat/logs/*
 .weechat/script/*
 .weechat/urlserver*
-config/nvim/backups/*
-config/nvim/plugged/*
+.config/nvim/backups/*
+.config/nvim/plugged/*
 
 *.swp
 
