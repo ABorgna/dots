@@ -2,4 +2,9 @@
 	name = Agustin Borgna
 	email = hola@aborgna.com.ar
 [push]
-	default = simple
+    default = simple
+
+[alias]
+    tree = log --graph --decorate --oneline --color
+    co = checkout
+
