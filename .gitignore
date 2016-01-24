@@ -1,5 +1,6 @@
 *.log
 
+.synergy/SSL/*
 .weechat/logs/*
 .weechat/script/*
 .weechat/urlserver*
