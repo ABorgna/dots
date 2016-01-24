@@ -5,6 +5,6 @@
     default = simple
 
 [alias]
-    tree = log --graph --decorate --oneline --color
+    tree = log --graph --decorate --oneline --color --all
     co = checkout
 
