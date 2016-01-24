@@ -14,6 +14,7 @@
     ~/.vim: .config/nvim/
     ~/.i3: .i3/
     ~/.tmux: .tmux/
+    ~/.synergy: .synergy/
     ~/.weechat: .weechat/
     ~/bin: bin/
     ~/.Rprofile: .Rprofile
@@ -26,6 +27,7 @@
     ~/.gdbinit: .gdbinit
     ~/.ghci: .ghci
     ~/.gitconfig: .gitconfig
+    ~/.synergy.conf: .synergy.conf
     ~/.tmux.conf: .tmux.conf
     ~/.urxvt: .urxvt
     ~/.yaourtrc: .yaourtrc
