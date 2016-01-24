@@ -87,7 +87,23 @@ else
     psColor=${Green}
 fi
 
-PS1="${psColor}${HOSTNAME:0:1} \w > ${NC}"
+# Git status functions
+function __git_branch(){
+    if [ $(git rev-parse --is-inside-work-tree 2> /dev/null) ];
+    then
+        psColor=$1
+        if [ $(git status -s 2> /dev/null | wc -l) -eq 0 ];
+        then
+            branchColor=${White}
+        else
+            branchColor=${Red}
+        fi
+        echo -ne "(${branchColor}$(git branch --no-color 2> /dev/null | \
+            sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' -e '${/^$/d}')${psColor})"
+    fi
+}
+
+PS1="${psColor}${HOSTNAME:0:1} \w \$(__git_branch \"${psColor}\")> ${NC}"
 
 export PATH=/usr/extbin:/home/z/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
