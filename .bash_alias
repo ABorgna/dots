@@ -15,7 +15,7 @@ alias cls='clear' # C-l works too if you are not in tmux
 # Conditional aliases (defaults must be escaped or else the alias will be called)
 alias vim='runDefault nvim \\vim'
 
-alias syn='synergyc --enable-crypto 192.168.250.200'
+alias syn='synergyc --no-restart --enable-crypto 192.168.250.200'
 
 # Tmux
 alias tm='~/.dots/bin/tm'
