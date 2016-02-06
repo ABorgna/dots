@@ -137,8 +137,7 @@ export LESS_TERMCAP_us=$'\e[1;30m'
 
 #               File & strings related functions:
 
-function swap()
-{ # Swap 2 filenames around, if they exist (from Uzi's bashrc).
+function swap() { # Swap 2 filenames around, if they exist (from Uzi's bashrc).
     local TMPFILE=tmp.$$
 
     [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
@@ -150,8 +149,7 @@ function swap()
     mv $TMPFILE "$2"
 }
 
-function extract()      # Handy Extract Program
-{
+function extract() {    # Handy Extract Program
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1     ;;
@@ -182,30 +180,13 @@ function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 # Make your directories and files access rights sane.
 function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 
-
-#               Process/system related functions:
-
 function wt() {  # weather
     echo -n "Weather in Bs. As.: "
     curl -skL 'http://xml.weather.yahoo.com/forecastrss?w=468739&u=c' \
     | sed -n 's/.*yweather:condition.*text="\([^"]*\)".*temp="\([^"]*\)".*/\1 \2C/p'
 }
 
-function my_ip() # Get IP adress on ethernet.
-{
-    MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 } ' |
-      sed -e s/addr://)
-    echo ${MY_IP:-"Not connected"}
-}
-function my_ip_wlan() # Get IP adress on wlan.
-{
-    MY_IP=$(/sbin/ifconfig wlan0 | awk '/inet/ { print $2 } ' |
-      sed -e s/addr://)
-    echo ${MY_IP:-"Not connected"}
-}
-
-function ii()   # Get current host related info.
-{
+function ii() { # Get current host related info.
     echo -e "\nYou are logged on ${BRed}$HOST"
     echo -e "\n${BRed}Additionnal information:$NC " ; uname -a
     echo -e "\n${BRed}Users logged on:$NC " ; w -hs |
@@ -219,11 +200,21 @@ function ii()   # Get current host related info.
     echo
 }
 
-function repeat()       # Repeat n times command.
-{
+function repeat() {     # Repeat n times command.
     local i max
     max=$1; shift;
     for ((i=1; i <= max ; i++)); do  # --> C-like syntax
         eval "$@";
     done
+}
+
+function runIfExists() {
+    command -v "${1%% *}" > /dev/null;
+    if [ $? -eq 0 ];
+    then
+        eval "$1";
+    elif [ $# -gt 1 ]
+    then
+        eval "$2";
+    fi
 }
