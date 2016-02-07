@@ -5,6 +5,8 @@
         create: true
         relink: true
         path: .config/nvim/
+    ~/.config/youtube-dl:
+        path: .config/youtube-dl/
     ~/.vimrc:
         relink: true
         path: .config/nvim/init.vim

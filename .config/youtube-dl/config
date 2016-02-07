@@ -1,0 +1,6 @@
+--continue
+--ignore-errors
+--no-overwrites
+--restrict-filenames
+--audio-format mp3
+--output %(title)s-%(id)s.%(ext)s
