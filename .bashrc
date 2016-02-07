@@ -208,13 +208,17 @@ function repeat() {     # Repeat n times command.
     done
 }
 
-function runIfExists() {
-    command -v "${1%% *}" > /dev/null;
+function runDefault() {
+    CMD=$1
+    DEFAULT=$2
+    shift 2
+
+    command -v "${CMD%% *}" > /dev/null;
     if [ $? -eq 0 ];
     then
-        eval "$1";
+        eval "$CMD $@";
     elif [ $# -gt 1 ]
     then
-        eval "$2";
+        eval "$DEFAULT $@";
     fi
 }
