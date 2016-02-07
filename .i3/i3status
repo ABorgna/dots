@@ -9,6 +9,7 @@ general {
 	output_format = "i3bar"
 }
 
+order += "ethernet bnep0"
 order += "wireless wlp3s0"
 order += "ethernet enp0s25"
 order += "battery 0"
@@ -18,6 +19,11 @@ order += "cpu_usage"
 #order += "cpu_temperature 0"
 order += "volume master"
 order += "time"
+
+ethernet bnep0 {
+        format_up = " b %ip "
+        format_down = ""
+}
 
 wireless wlp3s0 {
         format_up = " w %ip @ %essid (%quality) "
