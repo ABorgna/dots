@@ -217,8 +217,7 @@ function runDefault() {
     if [ $? -eq 0 ];
     then
         eval "$CMD $@";
-    elif [ $# -gt 1 ]
-    then
+    else
         eval "$DEFAULT $@";
     fi
 }

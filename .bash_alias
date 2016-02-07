@@ -12,8 +12,9 @@ alias j='jobs -l'
 alias ..='cd ..'
 alias cls='clear' # C-l works too if you are not in tmux
 
-alias vim='runDefault nvim vim'
-alias htop='runDefault glances htop'
+# Conditional aliases (defaults must be escaped or else the alias will be called)
+alias vim='runDefault nvim \\vim'
+alias htop='runDefault glances \\htop'
 
 # Tmux
 alias tm='~/.dots/bin/tm'
