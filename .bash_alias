@@ -14,7 +14,6 @@ alias cls='clear' # C-l works too if you are not in tmux
 
 # Conditional aliases (defaults must be escaped or else the alias will be called)
 alias vim='runDefault nvim \\vim'
-alias htop='runDefault glances \\htop'
 
 # Tmux
 alias tm='~/.dots/bin/tm'
