@@ -4,7 +4,7 @@
 !URxvt*.depth: 24
 ! Native transparency
 URxvt*.transparent: true
-URxvt*.shading: 66
+URxvt*.shading: 86
 
 ! Font
 !URxvt*.font: 9x15
