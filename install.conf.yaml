@@ -15,6 +15,7 @@
         path: .config/nvim/
     ~/.i3: .i3/
     ~/.weechat: .weechat/
+    ~/bin: bin/
     ~/.Rprofile: .Rprofile
     ~/.alsoftrc: .alsoftrc
     ~/.bashrc: .bashrc
