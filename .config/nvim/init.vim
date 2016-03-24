@@ -1,7 +1,7 @@
 set nocompatible
 
 let mapleader = ","
-let maplocalleader = ","
+let maplocalleader = ";"
 set number	" Show line numbers
 set relativenumber
 set linebreak	" Break lines at word (requires Wrap lines)
