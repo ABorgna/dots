@@ -71,7 +71,9 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 # Motd
 if [ -x /usr/bin/fortune -o -x /usr/games/fortune ]; then
+    clear
     ftn
+    echo
 fi
 
 # function _exit()              # Function to run upon exit of shell.
