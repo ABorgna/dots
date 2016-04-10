@@ -62,7 +62,7 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
 # Swap key bindings
 alias aoe='setxkbmap us intl'
-alias asd='setxkbmap us dvp -option "ctrl:nocaps"'
+alias asd='setxkbmap us dvp -option "ctrl:nocaps,compose:rwin"'
 
 # Use ghc installed by stack
 alias ghc='stack ghc'
