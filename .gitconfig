@@ -5,6 +5,11 @@
     default = simple
 
 [alias]
-    tree = log --graph --decorate --oneline --color --all
+    c = commit
     co = checkout
+    p = push
+    pf = push --force-with-lease
+    r = rebase -i
+    t = log --graph --decorate --oneline --color --all
+    tree = log --graph --decorate --oneline --color --all
 
