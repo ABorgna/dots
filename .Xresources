@@ -57,3 +57,6 @@ URxvt*.colorUL: #4682B4
 URxvt*.iso14755: true
 URxvt*.iso14755_52: false
 
+! Notify i3wm about bells
+Urxvt*.urgentOnBell: true
+
