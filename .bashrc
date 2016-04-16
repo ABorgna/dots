@@ -100,12 +100,12 @@ function __git_branch(){
         else
             branchColor=${Red}
         fi
-        echo -ne "(${branchColor}$(git branch --no-color 2> /dev/null | \
+        echo -ne "(\001${branchColor}\002$(git branch --no-color 2> /dev/null | \
             sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' -e '${/^$/d}')${psColor})"
     fi
 }
 
-PS1="${psColor}${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"${psColor}\")> ${NC}"
+PS1="\[${psColor}\]${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"\[${psColor}\]\")> \[${NC}\]"
 
 export PATH=/usr/extbin:/home/z/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
