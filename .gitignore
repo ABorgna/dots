@@ -6,6 +6,7 @@
 .weechat/urlserver*
 .config/nvim/backups/*
 .config/nvim/plugged/*
+.config/nvim/.netrwhist
 
 *.swp
 
