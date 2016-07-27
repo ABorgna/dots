@@ -21,6 +21,7 @@
     ~/.bashrc: .bashrc
     ~/.bash_alias: .bash_alias
     ~/.bash_profile: .bash_profile
+    ~/.bochsrc: .bochsrc
     ~/.gdbinit: .gdbinit
     ~/.ghci: .ghci
     ~/.gitconfig: .gitconfig
