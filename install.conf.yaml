@@ -26,6 +26,7 @@
     ~/.ghci: .ghci
     ~/.gitconfig: .gitconfig
     ~/.tmux.conf: .tmux.conf
+    ~/.urxvt: .urxvt
     ~/.yaourtrc: .yaourtrc
     ~/.ycm_extra_conf.py: .ycm_extra_conf.py
 

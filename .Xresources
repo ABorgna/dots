@@ -46,7 +46,7 @@ URxvt*.font: xft:Terminus:style=Regular:antialias=false, \
 ! True: enable the scrollbar [default]; option -sb. False: disable
 URxvt*.scrollBar: false
 
-URxvt*.perl-ext-common: default,matcher
+URxvt*.perl-ext-common: default,matcher,font-size
 
 ! URLs
 URxvt*.url-launcher: /usr/bin/xdg-open
@@ -59,4 +59,9 @@ URxvt*.iso14755_52: false
 
 ! Notify i3wm about bells
 Urxvt*.urgentOnBell: true
+
+! Dynamic resize
+Urxvt*.keysym.C-S-Up: font-size:increase
+Urxvt*.keysym.C-S-Down: font-size:decrease
+Urxvt*.font-size.step: 1
 
