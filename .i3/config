@@ -123,7 +123,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Runaway?' -b 'Runaway' 'i3-msg exit'"
 # lock (meta+shift+key-next-to-shift)
-bindcode $mod+Shift+94 exec i3lock -c 000000 -d
+bindcode $mod+Shift+52 exec i3lock -c 000000 -d
 # htop
 bindsym Control+Shift+Escape exec gnome-terminal -x htop
 # thunar
@@ -212,3 +212,13 @@ bindsym $mod+Shift+p exec xfce4-session-logout
 # Load Xresources
 exec xrdb -merge ~/.Xresources
 exec /bin/bash ~/.fehbg
+
+# TrackPoint + middle button = wheel
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+
+# Lock before sleeping
+exec --no-startup-id xss-lock -- i3lock -c 000000 -d

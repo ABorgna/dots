@@ -9,31 +9,24 @@ general {
 	output_format = "i3bar"
 }
 
-order += "ethernet enp5s0"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "battery 0"
+order += "battery 1"
 #order += "load"
 order += "cpu_usage"
 #order += "cpu_temperature 0"
 order += "volume master"
 order += "time"
 
-wireless wlan0 {
+wireless wlp3s0 {
         format_up = " w %ip @ %essid (%quality) "
         format_down = ""
 }
 
-wireless wlp4s0 {
-        format_up = " w %ip @ %essid (%quality) "
-        format_down = ""
-}
-
-ethernet eth0 {
+ethernet enp0s25 {
         format_up = " e %ip (%speed) "
         format_down = ""
-}
-
-ethernet enp5s0 {
-    format_up = " e %ip (%speed) "
-    format_down = ""
 }
 
 disk /home {
@@ -55,7 +48,13 @@ cpu_temperature 0 {
 
 battery 0 {
         #format = " %status %percentage %remaining (%consumption)"
-        format = " b %percentage %remaining (%consumption)"
+        format = " ⚡ %percentage %remaining (%consumption)"
+	low_threshold = 10
+}
+
+battery 1 {
+        #format = " %status %percentage %remaining (%consumption)"
+        format = " ⚡ %percentage %remaining (%consumption)"
 	low_threshold = 10
 }
 

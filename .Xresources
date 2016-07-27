@@ -65,3 +65,12 @@ Urxvt*.keysym.C-S-Up: font-size:increase
 Urxvt*.keysym.C-S-Down: font-size:decrease
 Urxvt*.font-size.step: 1
 
+! Laptop & high dpi things
+Xft.dpi: 112
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
