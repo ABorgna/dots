@@ -28,7 +28,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'
 alias df='df -kTh'
 alias free='free -h'
-alias dd='dcfldd'
+alias dd='dd status=progress'
 
 # Compilers
 function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
