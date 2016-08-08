@@ -14,8 +14,10 @@ class Zenburn(ColorScheme):
     def use(self, context):
         fg, bg, attr = default_colors
 
+        bg=235
+
         if context.reset:
-            return default_colors
+            return (fg,bg,attr)
 
         elif context.in_browser:
             if context.selected:

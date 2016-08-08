@@ -1,14 +1,22 @@
 *.log
 
 .synergy/SSL/*
+
 .weechat/logs/*
 .weechat/script/*
 .weechat/urlserver*
+
 .config/nvim/backups/*
 .config/nvim/plugged/*
 .config/nvim/.netrwhist
 
+.config/ranger/history
+.config/ranger/bookmarks
+
 *.swp
 
 *.secret
+
+__pycache__
+*.pyc
 
