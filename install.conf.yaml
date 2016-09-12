@@ -34,6 +34,7 @@
 
 - shell:
   - mkdir -p ~/src
+  - mkdir -p ~/.Trash
   - [git submodule update --init --recursive, Installing submodules]
     # "C-h works as <BS>" neovim workaround
     # https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
