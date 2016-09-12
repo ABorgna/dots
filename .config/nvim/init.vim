@@ -30,6 +30,7 @@ set shiftwidth=4	" Number of auto-indent spaces
 set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
+set tabstop=4
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -59,7 +60,7 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 " Neovim workaround
-nnoremap <silent> <BS> :wincmd h<CR>
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 nnoremap <silent> <C-A-k> :resize -1<CR>
 nnoremap <silent> <C-A-j> :resize +1<CR>
@@ -100,6 +101,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'bitc/lushtags'
+Plug 'rhysd/vim-clang-format'
 
 if has('nvim')
     Plug 'jalvesaq/Nvim-R'
@@ -130,4 +132,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " ================ Tagbar ===========================
 nmap <F8> :TagbarToggle<CR>
+
+" ================ Clang-format ===========================
+let g:clang_format#code_style = 'google'
+let g:clang_format#style_options = {
+            \ "IndentWidth": 4,
+            \ "AllowShortIfStatementsOnASingleLine": "false" }
+let g:clang_format#detect_style_file = 1
 
