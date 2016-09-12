@@ -10,6 +10,15 @@
     p = push
     pf = push --force-with-lease
     r = rebase -i
-    t = log --graph --decorate --oneline --color --all
-    tree = log --graph --decorate --oneline --color --all
+
+    t = !"git tree --all"
+    tt = !"git tree-extended --all"
+    ttt = !"git tree-full --all"
+    ts = !"git tree"
+    tts = !"git tree-extended"
+    ttts = !"git tree-full"
+
+    tree = log --graph --decorate --oneline --color
+    tree-extended = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold red)%d%C(reset)%n''          %C(white)%s%C(reset) %C(yellow)- %an <%ae> %C(reset)'
+    tree-full = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 
