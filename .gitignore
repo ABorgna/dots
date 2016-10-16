@@ -1,5 +1,10 @@
 *.log
 
+.tmux/resurrect
+.tmux/sidebar
+.tmux/plugins/*
+!.tmux/plugins/tpm
+
 .synergy/SSL/*
 
 .weechat/logs/*
