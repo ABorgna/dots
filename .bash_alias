@@ -73,6 +73,9 @@ function ghciwith () {
     nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [$*])" --run ghci
 }
 
+# Wine
+alias wine64='WINEARCH=win64 WINEPREFIX=~/.wine64 wine'
+
 # Proxy things
 function proxy_on() {
     export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
