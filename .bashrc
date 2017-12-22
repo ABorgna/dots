@@ -76,6 +76,11 @@ if [ -x /usr/bin/fortune -o -x /usr/games/fortune ]; then
     echo
 fi
 
+# Z - jump around
+if [ -f /usr/share/z/z.sh ]; then
+    . /usr/share/z/z.sh
+fi
+
 # function _exit()              # Function to run upon exit of shell.
 # {
 # }
