@@ -179,6 +179,7 @@ bar {
     font xft:DejaVu Sans Mono 9
     position top
     status_command i3status -c ~/.i3/i3status
+    #status_command i3blocks
 }
 
 
