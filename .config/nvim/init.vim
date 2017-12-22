@@ -3,7 +3,6 @@ set nocompatible
 let mapleader = ","
 let maplocalleader = ";"
 set number	" Show line numbers
-set relativenumber
 set linebreak	" Break lines at word (requires Wrap lines)
 set showmatch	" jighlight matching brace
 set visualbell	" Use visual bell (no beeping)
@@ -14,7 +13,13 @@ set showcmd
 set browsedir=buffer
 set wildmenu    " Show command autocomplete in a menu
 set clipboard=unnamed
+set mouse=a
+set cursorline
 inoremap ., <Esc>
+
+" ================ SpellCheck ===========================
+
+hi SpellBad cterm=underline
 
 " ================ Search ===========================
 
@@ -89,9 +94,9 @@ if has('persistent_undo')
 " ================ Plugins ==========================
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --omnisharp-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --omnisharp-completer'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug '~/.config/nvim/plugin/autoclose.vim'
+"Plug '~/.config/nvim/plugin/autoclose.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
@@ -102,17 +107,24 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'bitc/lushtags'
 Plug 'rhysd/vim-clang-format'
+Plug 'Shougo/vimproc.vim'
+
+Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+"Plug 'Shougo/neocomplete.vim', {'for': 'haskell'}
+Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
+Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
 
 if has('nvim')
-    Plug 'jalvesaq/Nvim-R'
+    "Plug 'jalvesaq/Nvim-R'
 else
-    Plug 'vim-scripts/Vim-R-plugin'
+    "Plug 'vim-scripts/Vim-R-plugin'
 endif
 
 call plug#end()
 
 " ================ YouCompleteMe ====================
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = '/usr/bin/python3'
 
 " ================ GitGutter ========================
 let g:gitgutter_updatetime = 750
@@ -139,4 +151,7 @@ let g:clang_format#style_options = {
             \ "IndentWidth": 4,
             \ "AllowShortIfStatementsOnASingleLine": "false" }
 let g:clang_format#detect_style_file = 1
+
+" ================ Neco-ghc ===========================
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
