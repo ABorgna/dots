@@ -46,6 +46,7 @@ alias tt='sublimetext'
 alias weather='weather -m SABE'
 alias minicom='minicom -c'
 alias cal='cal -3'
+alias battlenet='WINEARCH=win32 wine .wine/drive_c/Program\ Files/Battle.net/Battle.net.exe'
 
 # The ls family
 #   Add colors for filetype and  human-readable sizes
