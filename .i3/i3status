@@ -10,6 +10,7 @@ general {
 }
 
 order += "ethernet bnep0"
+order += "ethernet enp0s20u2"
 order += "wireless wlp3s0"
 order += "ethernet enp0s25"
 order += "battery 0"
@@ -22,6 +23,11 @@ order += "time"
 
 ethernet bnep0 {
         format_up = " b %ip "
+        format_down = ""
+}
+
+ethernet enp0s20u2 {
+        format_up = " u %ip "
         format_down = ""
 }
 
