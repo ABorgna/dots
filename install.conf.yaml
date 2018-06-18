@@ -1,22 +1,17 @@
-- clean: ['~']
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
 
 - link:
-    ~/.config/nvim:
-        create: true
-        relink: true
-        path: .config/nvim/
-    ~/.config/scc:
-        path: .config/scc/
-    ~/.config/youtube-dl:
-        path: .config/youtube-dl/
-    ~/.config/ranger:
-        path: .config/ranger/
-    ~/.vimrc:
-        relink: true
-        path: .config/nvim/init.vim
-    ~/.vim:
-        relink: true
-        path: .config/nvim/
+    ~/.config/nvim: .config/nvim/
+    ~/.config/scc: .config/scc/
+    ~/.config/youtube-dl: .config/youtube-dl/
+    ~/.config/ranger: .config/ranger/
+    ~/.vimrc: .config/nvim/init.vim
+    ~/.vim: .config/nvim/
     ~/.i3: .i3/
     ~/.tmux: .tmux/
     ~/.weechat: .weechat/
@@ -44,5 +39,5 @@
     # https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
   - infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti && tic ~/$TERM.ti
     #Tmux plugins
-  - ~/.tmux/plugins/tpm/bin/update_plugins all
+  - ~/.tmux/plugins/tpm/bin/update_plugins all; true
 
