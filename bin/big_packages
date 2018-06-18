@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pacman -Qi | grep -Po "Name *:.*|Installed Size *:.*" | paste - - | sed "s/Name *: \(.*\) *Installed Size *: \(.*\) \(.*B\)/\1 \2\3/" | sort -h -k2 | column -t
