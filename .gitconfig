@@ -1,6 +1,7 @@
 [user]
 	name = Agustin Borgna
-	email = hello@aborgna.com.ar
+	email = agustinborgna@gmail.com
+	signingkey = EA62514FA56C940A
 [push]
     default = simple
 
