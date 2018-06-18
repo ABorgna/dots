@@ -83,6 +83,12 @@ tnoremap ., <C-\><C-n>
 " I keep doing this...
 command! W w
 
+" Move up and down on visual lines"
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
 " ================ Directories ======================
 set backup
 silent !mkdir ~/.config/nvim/backups/back/ > /dev/null 2>&1
