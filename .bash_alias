@@ -64,6 +64,15 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 alias aoe='setxkbmap us intl'
 alias asd='setxkbmap us dvp -option "ctrl:nocaps"'
 
+# Use ghc installed by stack
+alias ghc='stack ghc'
+alias ghci='stack ghci'
+alias bazelt='bazel test --test_output=streamed'
+
+function ghciwith () {
+    nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [$*])" --run ghci
+}
+
 # Proxy things
 function proxy_on() {
     export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"

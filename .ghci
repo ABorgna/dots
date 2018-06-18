@@ -1,5 +1,5 @@
 :set prompt "λ: "
-:set prompt2 " | "
+:set prompt-cont " | "
 
 :set +m
 
