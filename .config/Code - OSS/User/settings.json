@@ -1,0 +1,22 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.mouseWheelZoom": true,
+    "editor.smoothScrolling":true,
+    "editor.rulers": [80,120],
+    "editor.tabSize": 2,
+    "editor.useTabStops": true,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "boundary",
+    "breadcrumbs.enabled": true,
+    "git.confirmSync": true,
+
+    // Vim
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.scroll": 40,
+    "vim.insertModeKeyBindings": [
+        {"before": [".",","],"after": ["<Esc>"]}
+    ]
+}
