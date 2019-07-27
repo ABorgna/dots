@@ -8,9 +8,9 @@ URxvt*.shading: 66
 
 ! Font
 !URxvt*.font: 9x15
-URxvt*.font: xft:Terminus:style=Regular:antialias=false, \
-             xft:DejaVu Sans Mono for Powerline:antialias=false \
-             xft:Sans:antialias=false
+URxvt*.font: xft:Droid Sans Mono:style=Regular:antialias=true, \
+             xft:DejaVu Sans Mono:antialias=true \
+             xft:Sans:antialias=true
 
 ! Colors
 *foreground:#D2C5BC 
