@@ -112,7 +112,7 @@ function __git_branch(){
 
 PS1="\[${psColor}\]${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"\[${psColor}\]\")> \[${NC}\]"
 
-export PATH=/usr/extbin:/home/z/bin:$PATH
+export PATH=/usr/extbin:/home/z/bin:/home/z/src/go/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
@@ -121,6 +121,7 @@ export HOSTFILE=$HOME/.hosts
 export EDITOR='/usr/bin/nvim'
 export GIT_EDITOR='/usr/bin/nvim'
 export IRC_CLIENT='weechat'
+export GOPATH='/home/z/src/go'
 
 # Feel the rainbow
 if [ "$TERM" == "xterm" ]; then
