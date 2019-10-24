@@ -6,6 +6,7 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.config/alacritty: .config/alacritty/
     ~/.config/nvim: .config/nvim/
     ~/.config/scc: .config/scc/
     ~/.config/youtube-dl: .config/youtube-dl/
