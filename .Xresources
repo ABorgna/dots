@@ -8,8 +8,8 @@ URxvt*.shading: 86
 
 ! Font
 !URxvt*.font: 9x15
-URxvt*.font: xft:Terminus:style=Regular:antialias=false, \
-             xft:DejaVu Sans Mono for Powerline:antialias=false \
+URxvt*.font: xft:Droid Sans Mono:medium:size=12:antialias=true, \
+             xft:Droid Sans Fallback:antialias=false \
              xft:Sans:antialias=false
 
 ! Colors
@@ -34,7 +34,7 @@ URxvt*.font: xft:Terminus:style=Regular:antialias=false, \
 *color12:          #628295
 
 *color5:           #D33682
-*color13:          #C46CBD
+*color13:          #C46CB2
 
 *color6:           #2AA198
 *color14:          #93A1A1
@@ -66,11 +66,11 @@ Urxvt*.keysym.C-S-Down: font-size:decrease
 Urxvt*.font-size.step: 1
 
 ! Laptop & high dpi things
-Xft.dpi: 112
+!Xft.dpi: 112
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  medium
 Xft.hinting: 1
-Xft.antialias: 1
+Xft.antialias: 0
 Xft.rgba: rgb
 
