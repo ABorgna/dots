@@ -3,11 +3,14 @@
     "autoswitch_osd": true, 
     "controllers": {
         "sc1": {
-            "icon": "sc-0.svg", 
+            "icon": "sc-1.svg", 
             "idle_timeout": 600, 
             "input_rotation_l": 20, 
             "input_rotation_r": -20, 
             "led_level": 80, 
+            "menu_cancel": "B", 
+            "menu_confirm": "A", 
+            "menu_control": "STICK", 
             "name": "sc1", 
             "osd_alignment": 0
         }
@@ -21,7 +24,7 @@
         "sc_by_cable": true, 
         "sc_dongle": true
     }, 
-    "enable_sniffing": false, 
+    "enable_sniffing": true, 
     "fix_xinput": true, 
     "gesture_colors": {
         "background": "160c00ff", 
@@ -35,30 +38,29 @@
         "minimize_to_status_icon": true, 
         "news": {
             "enabled": true, 
-            "last_version": "0.4.3"
+            "last_version": "0.4.5"
         }
     }, 
     "ignore_serials": true, 
-    "osd_color_theme": "Blue.colors.json", 
     "osd_colors": {
         "background": "101010", 
-        "border": "0000DF", 
-        "menuitem_border": "000040", 
-        "menuitem_hilight": "000050", 
-        "menuitem_hilight_border": "0000FF", 
-        "menuitem_hilight_text": "FFFFFF", 
-        "menuseparator": "505090", 
-        "text": "4060FF"
+        "border": "101010", 
+        "menuitem_border": "101010", 
+        "menuitem_hilight": "202020", 
+        "menuitem_hilight_border": "16FF26", 
+        "menuitem_hilight_text": "16FF26", 
+        "menuseparator": "2e3436", 
+        "text": "16BF24"
     }, 
-    "osd_style": "Reloaded.gtkstyle.css", 
+    "osd_style": "Classic.gtkstyle.css", 
     "osk_colors": {
-        "button1": "162082", 
-        "button1_border": "262b5e", 
-        "button2": "162d44", 
-        "button2_border": "27323e", 
-        "hilight": "00688D", 
-        "pressed": "1A9485", 
-        "text": "ffffff"
+        "button1": "101010", 
+        "button1_border": "101010", 
+        "button2": "2e3436", 
+        "button2_border": "2e3436", 
+        "hilight": "7A7A7A", 
+        "pressed": "B0B0B0", 
+        "text": "16BF24"
     }, 
     "output": {
         "axes": [[-32768, 32767], [-32768, 32767], [-32768, 32767], [-32768, 32767], [0, 255], [0, 255], [-1, 1], [-1, 1]], 
@@ -70,6 +72,6 @@
         "version": "0x110"
     }, 
     "recent_max": 10, 
-    "recent_profiles": ["Desktop (copy)", "Desktop", "XBox Controller", "XBox Controller with High Precision Camera"], 
+    "recent_profiles": ["Clone Hero", "Dead Cells", "XBox Controller", "XBox Controller with High Precision Camera", "Desktop"], 
     "windows_opacity": 0.95
 }
