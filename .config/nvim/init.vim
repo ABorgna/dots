@@ -116,23 +116,34 @@ Plug 'sjl/badwolf'
 " ---- Autocompletion
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer --omnisharp-completer'}
 "Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+"
+"if has('nvim')
+"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+"  Plug 'Shougo/deoplete.nvim'
+"  Plug 'roxma/nvim-yarp'
+"  Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+"
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ---- Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " ---- Haskell
-Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+"Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 "Plug 'Shougo/neocomplete.vim', {'for': 'haskell'}
-Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
-Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
+"Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
+"Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
+
+" ---- Python
+Plug 'tell-k/vim-autopep8', {'for': 'python'}
+
+" ---- Rust
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 " ---- Navigation
 Plug 'scrooloose/nerdtree'
@@ -144,6 +155,7 @@ Plug 'bitc/lushtags'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'vim-syntastic/syntastic'
 
 " ---- Others
 "Plug '~/.config/nvim/plugin/autoclose.vim'
@@ -151,6 +163,7 @@ Plug 'lervag/vimtex'
 Plug 'rhysd/vim-clang-format'
 Plug 'Shougo/vimproc.vim'
 Plug 'Rykka/riv.vim' " rst notes
+Plug 'Rykka/InstantRst' " rst autobuild
 
 if has('nvim')
     "Plug 'jalvesaq/Nvim-R'
@@ -163,10 +176,16 @@ call plug#end()
 " ================ YouCompleteMe ====================
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:ycm_python_binary_path = '/usr/bin/python3'
+"
+" ================ CoC =====================
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" ================ Syntastic ====================
+let g:syntastic_cpp_config_file = ".syntastic"
 
 " ================ Deoplete ====================
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
 
 " ================ GitGutter ========================
 let g:gitgutter_updatetime = 750
@@ -195,27 +214,27 @@ let g:clang_format#style_options = {
 let g:clang_format#detect_style_file = 1
 
 " ================ Neco-ghc ===========================
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+"autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " ================ Haskell-vim ===========================
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
-let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
-
-let g:haskell_indent_if = 0
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 2
-let g:haskell_indent_before_where = -2
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_do = 2
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 2
-let g:haskell_indent_case_alternative = 1
+"let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+"let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+"let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+"let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+"let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+"let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+"let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+"
+"let g:haskell_indent_if = 0
+"let g:haskell_indent_case = 2
+"let g:haskell_indent_let = 4
+"let g:haskell_indent_where = 2
+"let g:haskell_indent_before_where = -2
+"let g:haskell_indent_after_bare_where = 2
+"let g:haskell_indent_do = 2
+"let g:haskell_indent_in = 1
+"let g:haskell_indent_guard = 2
+"let g:haskell_indent_case_alternative = 1
 
 " ================ Ctrl-p ===========================
 let g:ctrlp_map = '<c-p>'
