@@ -72,6 +72,15 @@
         "version": "0x110"
     }, 
     "recent_max": 10, 
-    "recent_profiles": ["Clone Hero", "Dead Cells", "XBox Controller", "XBox Controller with High Precision Camera", "Desktop"], 
+    "recent_profiles": [
+      "Clone Hero",
+      "Dead Cells",
+      "XBox Controller",
+      "XBox Controller with High Precision Camera",
+      "Desktop",
+      "Desktop (copy)",
+      "WASD Firewatch",
+      "WASD"
+    ], 
     "windows_opacity": 0.95
 }
