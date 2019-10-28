@@ -28,6 +28,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 # Makes a more readable output.
 alias du='du -kh'
+alias du1='du -kh -d1 | sort -h'
 alias df='df -kTh'
 alias free='free -h'
 alias dd='dd status=progress'
