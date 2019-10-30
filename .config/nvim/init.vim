@@ -106,6 +106,8 @@ if has('persistent_undo')
 " ================ Haskell ======================
 autocmd FileType haskell set tabstop=2|set shiftwidth=2|set noautoindent|set colorcolumn=81
 autocmd FileType haskell filetype plugin indent on
+" Code formatter
+autocmd FileType haskell command Ormolu %!ormolu
 
 " ================ Plugins ==========================
 call plug#begin('~/.config/nvim/plugged')
