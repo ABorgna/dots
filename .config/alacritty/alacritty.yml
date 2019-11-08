@@ -100,6 +100,17 @@ tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
+  normal:
+    family: SauceCodePro Nerd Font
+    style: Regular
+  bold:
+    family: SauceCodePro Nerd Font
+    style: Bold
+  italic:
+    # FIXME: https://github.com/ryanoasis/nerd-fonts/issues/236
+    family: SourceCode Pro
+    style: Italic
+
   # Normal (roman) font face
   #normal:
     # Font family
