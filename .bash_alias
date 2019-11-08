@@ -40,7 +40,7 @@ function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
 alias cloak='history -d $((HISTCMD-1)) &&'
 alias c='cloak'
 alias clk='tty-clock -c -C 7 -d 40000000'
-alias ftn='fortune -ac'
+alias ftn='fortune -ec'
 alias music='ncmpcpp'
 alias mpdrestart='sudo mpd --kill; mpd'
 alias tt='sublimetext'
@@ -48,6 +48,7 @@ alias weather='weather -m SABE'
 alias minicom='minicom -c'
 alias cal='cal -3'
 alias battlenet='WINEARCH=win32 wine .wine/drive_c/Program\ Files/Battle.net/Battle.net.exe'
+alias ranger='source ranger'
 
 # The ls family
 #   Add colors for filetype and  human-readable sizes
@@ -69,8 +70,8 @@ alias aoe='setxkbmap us intl'
 alias asd='setxkbmap us dvp -option "ctrl:nocaps,compose:ralt"'
 
 # Use ghc installed by stack
-alias ghc='stack ghc'
-alias ghci='stack ghci'
+#alias ghc='stack ghc'
+#alias ghci='stack ghci'
 alias bazelt='bazel test --test_output=streamed'
 
 function ghciwith () {
