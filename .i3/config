@@ -30,6 +30,10 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec mmenu 'rofi -dmenu'
 
+# switch between QWERTY and DVORAK
+bindsym $mod+F1 exec --no-startup-id "setxkbmap us dvp -option 'ctrl:nocaps,compose:ralt'"
+bindsym $mod+F2 exec --no-startup-id "setxkbmap us intl"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
