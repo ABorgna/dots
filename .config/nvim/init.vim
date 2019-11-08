@@ -107,7 +107,7 @@ if has('persistent_undo')
 autocmd FileType haskell set tabstop=2|set shiftwidth=2|set noautoindent|set colorcolumn=81
 autocmd FileType haskell filetype plugin indent on
 " Code formatter
-autocmd FileType haskell command Ormolu %!ormolu
+autocmd FileType haskell command! Ormolu %!ormolu
 
 " ================ Plugins ==========================
 call plug#begin('~/.config/nvim/plugged')
@@ -181,6 +181,7 @@ call plug#end()
 "
 " ================ CoC =====================
 autocmd FileType json syntax match Comment +\/\/.\+$+
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " ================ Syntastic ====================
 let g:syntastic_cpp_config_file = ".syntastic"
