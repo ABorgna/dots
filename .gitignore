@@ -13,6 +13,7 @@
 
 .config/nvim/backups/*
 .config/nvim/plugged/*
+.config/nvim/spell/*
 .config/nvim/.netrwhist
 
 .config/ranger/history
