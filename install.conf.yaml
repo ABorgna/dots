@@ -7,11 +7,12 @@
 
 - link:
     ~/.config/alacritty: .config/alacritty/
-    ~/.config/rofi: .config/rofi/
     ~/.config/nvim: .config/nvim/
+    ~/.config/pboy: .config/pboy/
+    ~/.config/ranger: .config/ranger/
+    ~/.config/rofi: .config/rofi/
     ~/.config/scc: .config/scc/
     ~/.config/youtube-dl: .config/youtube-dl/
-    ~/.config/ranger: .config/ranger/
     ~/.vimrc: .config/nvim/init.vim
     ~/.vim: .config/nvim/
     ~/.i3: .i3/
