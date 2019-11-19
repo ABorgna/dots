@@ -66,8 +66,9 @@ alias lr='ll -R'           #  Recursive ls.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
 # Swap key bindings
+# Disables caps locks after changing to dvorak
 alias aoe='setxkbmap us intl'
-alias asd='setxkbmap us dvp -option "ctrl:nocaps,compose:ralt"'
+alias asd='setxkbmap us dvp -option "ctrl:nocaps,compose:ralt"; xdotool key Caps_Lock'
 
 # Use ghc installed by stack
 #alias ghc='stack ghc'
