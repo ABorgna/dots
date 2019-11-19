@@ -15,6 +15,7 @@
 .config/nvim/plugged/*
 .config/nvim/spell/*
 .config/nvim/.netrwhist
+.config/nvim/tmp.rst
 
 .config/ranger/history
 .config/ranger/bookmarks
