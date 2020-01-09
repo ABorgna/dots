@@ -220,12 +220,20 @@ bindsym $mod+Shift+p exec xfce4-session-logout
 exec xrdb -merge ~/.Xresources
 exec /bin/bash ~/.fehbg
 
-# TrackPoint + middle button = wheel
+# Thinkpad TrackPoint + middle button = wheel
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+
+# Dell trackpoint + middle button = wheel
+exec xinput set-prop "DELL09B8:00 0488:121F Mouse" "libinput Scroll Method Enabled" 0 0 1
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Lock before sleeping
 exec --no-startup-id xss-lock -- i3lock -c 000000 -d
