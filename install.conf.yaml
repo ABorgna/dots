@@ -35,6 +35,8 @@
     ~/.urxvt: .urxvt
     ~/.yaourtrc: .yaourtrc
     ~/.ycm_extra_conf.py: .ycm_extra_conf.py
+    ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
 
 - shell:
   - mkdir -p ~/src
