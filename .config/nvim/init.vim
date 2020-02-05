@@ -38,7 +38,8 @@ set softtabstop=2	" Number of spaces per Tab
 set tabstop=2
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list
+set listchars=tab:⍿·,trail:·
 
 " =============== Colors ============================
 set t_Co=256
