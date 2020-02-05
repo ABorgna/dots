@@ -2,7 +2,7 @@
     "_": "", 
     "buttons": {
         "A": {
-            "action": "button(Keys.KEY_ENTER)"
+            "action": "button(Keys.KEY_SPACE)"
         }, 
         "B": {
             "action": "button(Keys.KEY_ESC)"
@@ -19,26 +19,32 @@
         "LB": {
             "action": "button(Keys.KEY_Q)"
         }, 
+        "LGRIP": {
+            "action": "button(Keys.KEY_M)"
+        }, 
         "LPAD": {
             "action": "button(Keys.BTN_MIDDLE)"
         }, 
         "RB": {
             "action": "button(Keys.KEY_E)"
         }, 
+        "RGRIP": {
+            "action": "button(Keys.KEY_N)"
+        }, 
         "RPAD": {
             "action": "button(Keys.BTN_LEFT)"
         }, 
         "START": {
-            "action": "button(Keys.KEY_LEFTSHIFT)"
+            "action": "button(Keys.KEY_ESC)"
         }, 
         "STICKPRESS": {
-            "action": "keyboard()"
+            "action": "button(Keys.KEY_R)"
         }, 
         "X": {
-            "action": "button(Keys.KEY_SPACE)"
+            "action": "button(Keys.KEY_ENTER)"
         }, 
         "Y": {
-            "action": "button(Keys.KEY_TAB)"
+            "action": "button(Keys.KEY_LEFTSHIFT)"
         }
     }, 
     "cpad": {
@@ -48,7 +54,7 @@
     "is_template": false, 
     "menus": {}, 
     "pad_left": {
-        "action": "dpad(button(Keys.KEY_F), button(Keys.KEY_N), None, button(Keys.KEY_M))"
+        "action": "ring(sens(0.2, 0.2, ball(XY(mouse(Rels.REL_HWHEEL), mouse(Rels.REL_WHEEL)))), click(dpad(button(Keys.KEY_F), button(Keys.KEY_N), button(Keys.KEY_C), button(Keys.KEY_M))))"
     }, 
     "pad_right": {
         "action": "rotate(24.2, smooth(8, 0.78, 2.0, ball(mouse())))"
@@ -62,5 +68,5 @@
     "trigger_right": {
         "action": "trigger(50, button(Keys.BTN_LEFT))"
     }, 
-    "version": 1.4
+    "version": 1.3
 }

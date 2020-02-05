@@ -62,5 +62,5 @@
     "trigger_right": {
         "action": "trigger(50, button(Keys.BTN_LEFT))"
     }, 
-    "version": 1.3
+    "version": 1.4
 }

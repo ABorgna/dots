@@ -48,7 +48,7 @@
     "is_template": false, 
     "menus": {}, 
     "pad_left": {
-        "action": "dpad(button(Keys.KEY_F), button(Keys.KEY_N), None, button(Keys.KEY_M))"
+        "action": "ring(ball(XY(mouse(Rels.REL_HWHEEL), mouse(Rels.REL_WHEEL))), click(dpad(button(Keys.KEY_F), button(Keys.KEY_N), None, button(Keys.KEY_M))))"
     }, 
     "pad_right": {
         "action": "rotate(24.2, smooth(8, 0.78, 2.0, ball(mouse())))"
@@ -62,5 +62,5 @@
     "trigger_right": {
         "action": "trigger(50, button(Keys.BTN_LEFT))"
     }, 
-    "version": 1.4
+    "version": 1.3
 }

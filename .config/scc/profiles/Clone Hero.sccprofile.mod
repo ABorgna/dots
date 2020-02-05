@@ -60,5 +60,5 @@
     "trigger_right": {
         "action": "axis(Axes.ABS_RZ)"
     }, 
-    "version": 1.3
+    "version": 1.4
 }

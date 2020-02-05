@@ -17,13 +17,13 @@
             "action": "button(Keys.BTN_TL)"
         }, 
         "LGRIP": {
-            "action": "button(Keys.BTN_SELECT)"
+            "action": "button(Keys.BTN_WEST)"
         }, 
         "RB": {
             "action": "button(Keys.BTN_TR)"
         }, 
         "RGRIP": {
-            "action": "button(Keys.BTN_SELECT)"
+            "action": "button(Keys.BTN_WEST)"
         }, 
         "RPAD": {
             "action": "button(Keys.BTN_THUMBR)"
@@ -60,5 +60,5 @@
     "trigger_right": {
         "action": "axis(Axes.ABS_RZ)"
     }, 
-    "version": 1.4
+    "version": 1.3
 }
