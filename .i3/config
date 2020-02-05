@@ -33,6 +33,7 @@ bindsym $mod+d exec mmenu 'rofi -dmenu'
 # switch between QWERTY and DVORAK
 bindsym $mod+F1 exec --no-startup-id "setxkbmap us dvp -option 'ctrl:nocaps,compose:ralt'"
 bindsym $mod+F2 exec --no-startup-id "setxkbmap us intl"
+bindsym $mod+F9 exec --no-startup-id "xdotool key Caps_Lock"
 
 # change focus
 bindsym $mod+h focus left
@@ -183,6 +184,7 @@ bar {
     font xft:DejaVu Sans Mono 9, xft:Noto Emoji 9, FontAwesome 9
     position top
     status_command i3status -c ~/.i3/i3status
+    tray_output primary
     #font xft:Noto Emoji 9, pango:DejaVu Sans Mono 9, FontAwesome 9
     #position top
     #status_command i3status-rs ~/.i3/i3status-rust.toml
@@ -207,7 +209,6 @@ bar {
 #exec --no-startup-id xsetroot -solid "#080008"
 exec --no-startup-id eval $(cat ~/.fehbg)
 
-
 # XFCE4 utilities
 exec --no-startup-id xfce4-session
 for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
@@ -228,7 +229,7 @@ exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
 
 # Dell trackpoint + middle button = wheel
-exec xinput set-prop "DELL09B8:00 0488:121F Mouse" "libinput Scroll Method Enabled" 0 0 1
+exec xinput set-prop "DELL08B8:00 0488:121F Mouse" "libinput Scroll Method Enabled" 0 0 1
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
