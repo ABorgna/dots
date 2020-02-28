@@ -181,7 +181,7 @@ bar {
         urgent_workspace   #101010 #202020 #f07746
     }
 
-    font xft:DejaVu Sans Mono 9, xft:Noto Emoji 9, FontAwesome 9
+    font xft:DejaVu Sans Mono 9, FontAwesome 9
     position top
     status_command i3status -c ~/.i3/i3status
     tray_output primary
