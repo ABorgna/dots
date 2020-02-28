@@ -17,13 +17,13 @@
             "action": "button(Keys.BTN_TL)"
         }, 
         "LGRIP": {
-            "action": "button(Keys.BTN_WEST)"
+            "action": "button(Keys.BTN_GAMEPAD)"
         }, 
         "RB": {
             "action": "button(Keys.BTN_TR)"
         }, 
         "RGRIP": {
-            "action": "button(Keys.BTN_WEST)"
+            "action": "button(Keys.BTN_NORTH)"
         }, 
         "RPAD": {
             "action": "button(Keys.BTN_THUMBR)"
@@ -42,7 +42,9 @@
         }
     }, 
     "cpad": {}, 
-    "gyro": {}, 
+    "gyro": {
+        "action": "cemuhook()"
+    }, 
     "is_template": false, 
     "menus": {}, 
     "pad_left": {
