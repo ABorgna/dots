@@ -121,6 +121,9 @@ bindcode $mod+Shift+17 move container to workspace ?
 bindcode $mod+Shift+18 move container to workspace ↕
 bindcode $mod+Shift+19 move container to workspace ฿
 
+# Pin a window to all workspaces
+bindcode $mod+Shift+21 sticky toggle
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
