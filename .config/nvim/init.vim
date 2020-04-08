@@ -142,6 +142,7 @@ Plug 'airblade/vim-gitgutter'
 
 " ---- Python
 Plug 'tell-k/vim-autopep8', {'for': 'python'}
+Plug 'psf/black'
 
 " ---- Rust
 Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -244,6 +245,7 @@ let g:clang_format#detect_style_file = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et' " Open the same file twice
 " Ignore files in .gitignore
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
