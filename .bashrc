@@ -146,6 +146,11 @@ export LESS_TERMCAP_so=$'\e[00;42;30m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;30m'
 
+# ssh agent
+if [ -x /usr/bin/keychain ]; then
+    eval $(keychain --eval --noask --quiet --timeout 5)
+    # Remember to use "AddKeysToAgent yes" in your ssh config
+fi
 
 #               File & strings related functions:
 
