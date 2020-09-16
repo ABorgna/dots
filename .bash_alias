@@ -35,6 +35,7 @@ alias dd='dd status=progress'
 
 # Compilers
 function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
+alias watchmake='while true; do make --silent; sleep 1; done'
 
 # Randoms
 alias cloak='history -d $((HISTCMD-1)) &&'
