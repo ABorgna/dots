@@ -17,16 +17,16 @@
             "action": "button(Keys.BTN_TL)"
         }, 
         "LGRIP": {
-            "action": "button(Keys.BTN_GAMEPAD)"
+            "action": "button(Keys.BTN_TL)"
         }, 
         "RB": {
             "action": "button(Keys.BTN_TR)"
         }, 
         "RGRIP": {
-            "action": "button(Keys.BTN_NORTH)"
+            "action": "button(Keys.BTN_TR)"
         }, 
         "RPAD": {
-            "action": "button(Keys.BTN_THUMBR)"
+            "action": "button(Keys.BTN_TR)"
         }, 
         "START": {
             "action": "button(Keys.BTN_START)"
