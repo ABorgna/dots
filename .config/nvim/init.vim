@@ -104,12 +104,6 @@ if has('persistent_undo')
     set undofile
     endif
 
-" ================ Haskell ======================
-autocmd FileType haskell set tabstop=2|set shiftwidth=2|set noautoindent|set colorcolumn=81
-autocmd FileType haskell filetype plugin indent on
-" Code formatter
-autocmd FileType haskell command! Ormolu %!ormolu
-
 " ================ Plugins ==========================
 call plug#begin('~/.config/nvim/plugged')
 
@@ -139,10 +133,14 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'Shougo/neocomplete.vim', {'for': 'haskell'}
 "Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
 "Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
+autocmd FileType haskell set tabstop=2|set shiftwidth=2|set noautoindent|set colorcolumn=81
+autocmd FileType haskell filetype plugin indent on
+" Code formatter
+autocmd FileType haskell command! Ormolu %!ormolu
 
 " ---- Python
 Plug 'tell-k/vim-autopep8', {'for': 'python'}
-Plug 'psf/black'
+Plug 'psf/black', { 'tag': '*' }
 
 " ---- Rust
 Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -161,13 +159,22 @@ Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'vim-syntastic/syntastic'
 
+" ---- Agda
+Plug 'derekelkins/agda-vim'
+
+" ---- LaTeX
+Plug 'lervag/vimtex'
+let g:tex_flavor = "latex"
+autocmd FileType tex set textwidth=80|set colorcolumn=81|set tabstop=2|set shiftwidth=2
+autocmd FileType tex set spell
+
 " ---- Others
 "Plug '~/.config/nvim/plugin/autoclose.vim'
-Plug 'lervag/vimtex'
 Plug 'rhysd/vim-clang-format'
 Plug 'Shougo/vimproc.vim'
 Plug 'Rykka/riv.vim' " rst notes
 Plug 'Rykka/InstantRst' " rst autobuild
+Plug 'chrisbra/unicode.vim' " Unicode symbol search
 
 if has('nvim')
     "Plug 'jalvesaq/Nvim-R'
@@ -197,6 +204,15 @@ let g:gitgutter_updatetime = 750
 
 " ================ Vimtex ===========================
 let g:tex_flavor = 'latex'
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 
 " ================ NERDTree =========================
 nnoremap <silent> <A-n> :NERDTreeToggle<CR>
