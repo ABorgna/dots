@@ -17,5 +17,14 @@
         }
       }
     }
-  }
+  },
+
+  "python.linting.enabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pylintArgs": ["--disable=C0330,C0326","--max-line-legth=88"],
+  //"python.linting.pylintArgs": ["--disable=E1136,E501","--max-line-legth=88"],
+  "python.linting.flake8Enabled": true,
+  //"python.linting.flake8Args": [],
+  "python.linting.mypyEnabled": true,
+  "python.formatting.provider": "black"
 }
