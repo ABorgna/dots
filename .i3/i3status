@@ -11,11 +11,12 @@ general {
 
 order += "ethernet bnep0"
 order += "ethernet enp0s20u2"
+order += "wireless wlp2s0"
 order += "wireless wlp3s0"
 order += "wireless wlo1"
 order += "ethernet enp0s25"
 order += "ethernet eno2"
-order += "battery 0"
+#order += "battery 0"
 #order += "battery 1"
 #order += "load"
 order += "cpu_usage"
@@ -30,6 +31,11 @@ ethernet bnep0 {
 
 ethernet enp0s20u2 {
         format_up = " u %ip "
+        format_down = ""
+}
+
+wireless wlp2s0 {
+        format_up = " w %ip @ %essid (%quality) "
         format_down = ""
 }
 
