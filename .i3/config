@@ -131,7 +131,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Runaway?' -b 'Runaway' 'i3-msg exit'"
 # lock (meta+shift+key-next-to-shift)
-bindcode $mod+Shift+52 exec i3lock -c 000000 -d
+bindcode $mod+Shift+52 exec i3lock -c 000000 -e & sleep 5 && xset dpms force off
 # htop
 bindsym Control+Shift+Escape exec gnome-terminal -x htop
 # thunar
