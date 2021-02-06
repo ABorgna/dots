@@ -238,3 +238,4 @@ function runDefault() {
         eval "$DEFAULT $@";
     fi
 }
+source "$HOME/.cargo/env"
