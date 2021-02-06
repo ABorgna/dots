@@ -15,6 +15,7 @@
     ~/.config/youtube-dl: .config/youtube-dl/
     ~/.vimrc: .config/nvim/init.vim
     ~/.vim: .config/nvim/
+    ~/.ideavimrc: .config/nvim/init.vim
     ~/.i3: .i3/
     ~/.tmux: .tmux/
     ~/.synergy: .synergy/
