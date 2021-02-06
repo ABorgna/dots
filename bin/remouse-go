@@ -1,0 +1,3 @@
+#!/bin/bash
+#remouse --address 192.168.1.19 --orientation left --mode fill --monitor 0
+remouse --address 10.11.99.1 --orientation left --mode fill --monitor 0
