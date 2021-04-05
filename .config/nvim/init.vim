@@ -90,6 +90,11 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
+" Coc action shortcut
+nnoremap <leader>ca :CocAction<CR>
+"nnoremap <leader>ca <Plug>(coc-codeaction-cursor)
+nnoremap <leader>cs <Plug>(coc-codeaction-selected)
+
 " ================ Directories ======================
 set backup
 silent !mkdir ~/.config/nvim/backups/back/ > /dev/null 2>&1
@@ -144,7 +149,7 @@ Plug 'psf/black', { 'tag': '*' }
 
 " ---- Rust
 Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'racer-rust/vim-racer', {'for': 'rust'}
+"Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 " ---- Navigation

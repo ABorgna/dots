@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/alacritty: .config/alacritty/
+    ~/.config/coc/extensions/package.json: .config/coc/extensions/package.json
     ~/.config/nvim: .config/nvim/
     ~/.config/pboy: .config/pboy/
     ~/.config/ranger: .config/ranger/
