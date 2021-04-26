@@ -37,6 +37,30 @@
             "menu_control": "STICK", 
             "name": "sc1:4", 
             "osd_alignment": 0
+        }, 
+        "sc2": {
+            "icon": "sc-3.svg", 
+            "idle_timeout": 600, 
+            "input_rotation_l": 20, 
+            "input_rotation_r": -20, 
+            "led_level": 80, 
+            "menu_cancel": "B", 
+            "menu_confirm": "A", 
+            "menu_control": "STICK", 
+            "name": "sc2", 
+            "osd_alignment": 0
+        }, 
+        "sc3": {
+            "icon": "sc-4.svg", 
+            "idle_timeout": 600, 
+            "input_rotation_l": 20, 
+            "input_rotation_r": -20, 
+            "led_level": 80, 
+            "menu_cancel": "B", 
+            "menu_confirm": "A", 
+            "menu_control": "STICK", 
+            "name": "sc3", 
+            "osd_alignment": 0
         }
     }, 
     "drivers": {
@@ -61,8 +85,8 @@
         "minimize_on_start": false, 
         "minimize_to_status_icon": false, 
         "news": {
-            "enabled": true, 
-            "last_version": "0.4.7"
+            "enabled": false, 
+            "last_version": "0.4.8"
         }
     }, 
     "ignore_serials": true, 
@@ -96,6 +120,6 @@
         "version": "0x110"
     }, 
     "recent_max": 10, 
-    "recent_profiles": ["XBox Controller", "CrossCode", "Risk of Rain", "WASD", "XBox Controller with High Precision Camera", "Dead Cells", "Desktop", "Clone Hero", "Desktop (copy)", "WASD Firewatch"], 
+    "recent_profiles": ["CrossCode", "XBox Controller", "Risk of Rain", "WASD", "XBox Controller with High Precision Camera", "Dead Cells", "Desktop", "Clone Hero", "Desktop (copy)", "WASD Firewatch"], 
     "windows_opacity": 0.95
 }
