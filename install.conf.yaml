@@ -52,4 +52,6 @@
     #Tmux plugins
   - ~/.tmux/plugins/tpm/bin/install_plugins; true
   - ~/.tmux/plugins/tpm/bin/update_plugins all; true
+    # Coc plugins
+  - cd ~/.config/coc/extensions/ && yarn --emoji true
 
