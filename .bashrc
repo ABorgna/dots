@@ -8,7 +8,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-
 #               Source global definitions (if any)
 
 if [ -f /etc/bashrc ]; then
@@ -33,6 +32,8 @@ shopt -s cmdhist
 shopt -s histappend histreedit histverify
 shopt -s extglob       # Necessary for programmable completion.
 
+# Reset this
+export PROMPT_COMMAND='printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 #               Greeting, motd etc.
 
@@ -78,6 +79,8 @@ fi
 
 # Z - jump around
 if [ -f /usr/share/z/z.sh ]; then
+    export _Z_NO_PROMPT_COMMAND=1
+    export PROMPT_COMMAND="(_z --add \"$(command pwd -P 2>/dev/null)\" 2>/dev/null &) ${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
     . /usr/share/z/z.sh
 fi
 
@@ -130,6 +133,22 @@ fi
 # Feel the rainbow
 if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
+fi
+
+# HSTR configuration
+if [ -x /usr/bin/hstr ]; then
+  alias hh=hstr                    # hh to be alias for hstr
+  export HSTR_CONFIG=hicolor       # get more colors
+  shopt -s histappend              # append new history items to .bash_history
+  export HISTCONTROL=ignorespace   # leading space hides commands from history
+  export HISTFILESIZE=10000        # increase history file size (default is 500)
+  export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+  # ensure synchronization between bash memory and history file
+  export PROMPT_COMMAND="history -a; history -n${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+  # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+  if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+  # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+  if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 fi
 
 #               Tailoring 'less'
@@ -238,4 +257,6 @@ function runDefault() {
         eval "$DEFAULT $@";
     fi
 }
+
 source "$HOME/.cargo/env"
+
