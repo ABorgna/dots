@@ -93,7 +93,9 @@ nnoremap gj j
 " Coc action shortcut
 nnoremap <leader>ca :CocAction<CR>
 "nnoremap <leader>ca <Plug>(coc-codeaction-cursor)
-nnoremap <leader>cs <Plug>(coc-codeaction-selected)
+vnoremap <leader>cs <Plug>(coc-codeaction-curser)
+" Enter to confirm popup action
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " ================ Directories ======================
 set backup
@@ -145,7 +147,8 @@ autocmd FileType haskell command! Ormolu %!ormolu
 
 " ---- Python
 Plug 'tell-k/vim-autopep8', {'for': 'python'}
-Plug 'psf/black', { 'tag': '*' }
+" Plug 'psf/black', { 'tag': '*' }
+Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
 
 " ---- Rust
 Plug 'cespare/vim-toml', {'for': 'toml'}
