@@ -106,7 +106,7 @@
     handle-width: 8px ;
     padding:      0;
 }
-#sidebar {
+#mode-switcher {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
 }
@@ -139,4 +139,8 @@
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
+}
+element-text, element-icon {
+    background-color:               inherit;
+    text-color:                     inherit;
 }
