@@ -124,6 +124,7 @@ export HOSTFILE=$HOME/.hosts
 export EDITOR='/usr/bin/nvim'
 export GIT_EDITOR='/usr/bin/nvim'
 export IRC_CLIENT='weechat'
+export DPQ=/home/aborgna/src/hs/dpq/
 
 # Extend PATH with stack's binaries
 if [ -x /usr/bin/stack ]; then
