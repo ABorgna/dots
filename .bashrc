@@ -18,7 +18,6 @@ if [ -f ~/.bash_alias ]; then
       . ~/.bash_alias   # --> Read .bash_alias, if present.
 fi
 
-
 #               Some settings
 
 # Enable options:
@@ -115,7 +114,7 @@ function __git_branch(){
 
 PS1="\[${psColor}\]${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"\[${psColor}\]\")> \[${NC}\]"
 
-export PATH=/home/z/.gem/ruby/2.3.0/bin:/usr/extbin:/home/z/bin:$PATH
+export PATH=/home/aborgna/.local/bin:/home/aborgna/.gem/ruby/2.3.0/bin:/usr/extbin:/home/aborgna/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "
@@ -136,6 +135,7 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 # HSTR configuration
+export PROMPT_COMMAND="history -a; history -n${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 if [ -x /usr/bin/hstr ]; then
   alias hh=hstr                    # hh to be alias for hstr
   export HSTR_CONFIG=hicolor       # get more colors
@@ -144,7 +144,6 @@ if [ -x /usr/bin/hstr ]; then
   export HISTFILESIZE=10000        # increase history file size (default is 500)
   export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
   # ensure synchronization between bash memory and history file
-  export PROMPT_COMMAND="history -a; history -n${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
   # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
   if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
   # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
@@ -171,79 +170,11 @@ if [ -x /usr/bin/keychain ]; then
     # Remember to use "AddKeysToAgent yes" in your ssh config
 fi
 
-#               File & strings related functions:
+# Setup vscode terminal integration
+#[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+export VSCODE_SUGGEST=1
 
-function swap() { # Swap 2 filenames around, if they exist (from Uzi's bashrc).
-    local TMPFILE=tmp.$$
-
-    [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
-    [ ! -e $1 ] && echo "swap: $1 does not exist" && return 1
-    [ ! -e $2 ] && echo "swap: $2 does not exist" && return 1
-
-    mv "$1" $TMPFILE
-    mv "$2" "$1"
-    mv $TMPFILE "$2"
-}
-
-function extract() {    # Handy Extract Program
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)   tar xvjf $1     ;;
-            *.tar.gz)    tar xvzf $1     ;;
-            *.bz2)       bunzip2 $1      ;;
-            *.rar)       unrar x $1      ;;
-            *.gz)        gunzip $1       ;;
-            *.tar)       tar xvf $1      ;;
-            *.tbz2)      tar xvjf $1     ;;
-            *.tgz)       tar xvzf $1     ;;
-            *.zip)       unzip $1        ;;
-            *.Z)         uncompress $1   ;;
-            *.7z)        7z x $1         ;;
-            *)           echo "'$1' cannot be extracted via >extract<" ;;
-        esac
-    else
-        echo "'$1' is not a valid file!"
-    fi
-}
-
-
-# Creates an archive (*.tar.gz) from given directory.
-function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
-
-# Create a ZIP archive of a file or folder.
-function makezip() { zip -r "${1%%/}.zip" "$1" ; }
-
-# Make your directories and files access rights sane.
-function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
-
-function wt() {  # weather
-    echo -n "Weather in Bs. As.: "
-    curl -skL 'http://xml.weather.yahoo.com/forecastrss?w=468739&u=c' \
-    | sed -n 's/.*yweather:condition.*text="\([^"]*\)".*temp="\([^"]*\)".*/\1 \2C/p'
-}
-
-function ii() { # Get current host related info.
-    echo -e "\nYou are logged on ${BRed}$HOST"
-    echo -e "\n${BRed}Additionnal information:$NC " ; uname -a
-    echo -e "\n${BRed}Users logged on:$NC " ; w -hs |
-             cut -d " " -f1 | sort | uniq
-    echo -e "\n${BRed}Current date :$NC " ; date
-    echo -e "\n${BRed}Machine stats :$NC " ; uptime
-    echo -e "\n${BRed}Memory stats :$NC " ; free
-    echo -e "\n${BRed}Diskspace :$NC " ; mydf / $HOME
-    echo -e "\n${BRed}Local IP Address :$NC" ; my_ip; my_ip_wlan
-    echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
-    echo
-}
-
-function repeat() {     # Repeat n times command.
-    local i max
-    max=$1; shift;
-    for ((i=1; i <= max ; i++)); do  # --> C-like syntax
-        eval "$@";
-    done
-}
-
+# Used on alias
 function runDefault() {
     CMD=$1
     DEFAULT=$2
@@ -260,3 +191,4 @@ function runDefault() {
 
 source "$HOME/.cargo/env"
 
+. "$HOME/.cargo/env"

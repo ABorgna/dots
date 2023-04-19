@@ -5,4 +5,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [ -e /home/z/.nix-profile/etc/profile.d/nix.sh ]; then . /home/z/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"

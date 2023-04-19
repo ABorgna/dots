@@ -167,6 +167,9 @@ Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'vim-syntastic/syntastic'
 
+" ---- Justfiles
+Plug 'NoahTheDuke/vim-just'
+
 " ---- Agda
 Plug 'derekelkins/agda-vim'
 
