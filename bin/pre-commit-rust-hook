@@ -4,6 +4,11 @@
 
 set -eu
 
+if [[ "${IGNORE_RUSTHOOKS:=0}" -ne 0 ]]; then
+    echo "Ignoring rusthooks"
+    exit 0
+fi
+
 if ! cargo fmt -- --check
 then
     echo "There are some code style issues."
