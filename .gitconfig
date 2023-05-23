@@ -7,6 +7,7 @@
 
 [alias]
     c = commit
+    ca = commit --amend
     co = checkout
     p = push
     pf = push --force-with-lease
