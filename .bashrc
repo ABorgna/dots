@@ -176,6 +176,13 @@ if [ -x /usr/bin/keychain ]; then
     # Remember to use "AddKeysToAgent yes" in your ssh config
 fi
 
+# hook up direnv
+command -v "direnv" > /dev/null;
+if [ $? -eq 0 ];
+then
+  eval "$(direnv hook bash)"
+fi
+
 # Setup vscode terminal integration
 #[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
 export VSCODE_SUGGEST=1
