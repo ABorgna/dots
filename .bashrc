@@ -98,6 +98,10 @@ fi
 
 # Git status functions
 function __git_branch(){
+    # Disable branch reporting in WSL
+    #if grep -qi microsoft /proc/version; then
+    #  true # WSL
+    #else
     if [ $(git rev-parse --is-inside-work-tree 2> /dev/null) ];
     then
         psColor=$1
@@ -110,6 +114,7 @@ function __git_branch(){
         echo -ne "(\001${branchColor}\002$(git branch --no-color 2> /dev/null | \
             sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' -e '${/^$/d}')${psColor})"
     fi
+    #fi
 }
 
 PS1="\[${psColor}\]${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"\[${psColor}\]\")> \[${NC}\]"
