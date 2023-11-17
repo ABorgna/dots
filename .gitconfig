@@ -1,6 +1,6 @@
 [user]
 	name = Agustin Borgna
-	email = agustinborgna@gmail.com
+	email = agustin.borgna@quantinuum.com
 	signingkey = EA62514FA56C940A
 [push]
     default = simple
@@ -34,3 +34,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[credential]
+	helper = store --file ~/.gitcredentials
+[credential "https://github.com"]
+	username = aborgna-q
