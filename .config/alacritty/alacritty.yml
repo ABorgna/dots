@@ -71,6 +71,8 @@ window:
   # Window class (Linux only):
   #class: Alacritty
 
+  opacity: 0.9
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -83,14 +85,13 @@ scrolling:
 # Font configuration (changes require restart)
 font:
   normal:
-    family: SauceCodePro Nerd Font
+    family: Maple Mono
     style: Regular
   bold:
-    family: SauceCodePro Nerd Font
+    family: Maple Mono
     style: Bold
   italic:
-    # FIXME: https://github.com/ryanoasis/nerd-fonts/issues/236
-    family: SourceCode Pro
+    family: Maple Mono
     style: Italic
 
   # Normal (roman) font face
@@ -143,22 +144,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -415,12 +400,6 @@ bell:
   duration: 0
   color: '0xffffff'
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.7
-
 # Mouse bindings
 #
 # Available fields:
@@ -503,9 +482,6 @@ working_directory: None
 # Alacritty will fall back to the WinPTY automatically if the ConPTY
 # backend cannot be initialized.
 enable_experimental_conpty_backend: false
-
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
 
 debug:
   # Display the time it takes to redraw each frame.
