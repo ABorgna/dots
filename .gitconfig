@@ -12,7 +12,9 @@
     p = push
     pf = push --force-with-lease
     r = rebase -i
+
     f = fetch --prune
+    fa = fetch --prune --all
 
     t = !"git tree --all"
     tt = !"git tree-extended --all"
