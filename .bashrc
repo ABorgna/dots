@@ -209,3 +209,5 @@ function runDefault() {
 source "$HOME/.cargo/env"
 
 . "$HOME/.cargo/env"
+
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
