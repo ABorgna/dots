@@ -6,10 +6,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # borders
-new_window 1pixel
+#default_border none|normal|pixel or `normal|pixel px`
 
 # default split
 default_orientation auto

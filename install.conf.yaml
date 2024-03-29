@@ -9,18 +9,19 @@
     ~/.config/alacritty: .config/alacritty/
     ~/.config/coc/extensions/package.json: .config/coc/extensions/package.json
     ~/.config/environment.d: .config/environment.d
+    ~/.config/i3: .config/i3/
     ~/.config/nvim: .config/nvim/
     ~/.config/pboy: .config/pboy/
     ~/.config/ranger: .config/ranger/
     ~/.config/redshift: .config/redshift/
     ~/.config/rofi: .config/rofi/
     ~/.config/scc: .config/scc/
+    ~/.config/sway: .config/sway/
     ~/.config/touchegg: .config/touchegg/
     ~/.config/youtube-dl: .config/youtube-dl/
     ~/.vimrc: .config/nvim/init.vim
     ~/.vim: .config/nvim/
     ~/.ideavimrc: .config/nvim/init.vim
-    ~/.i3: .i3/
     ~/.tmux: .tmux/
     ~/.synergy: .synergy/
     ~/.mixxx: .mixxx/

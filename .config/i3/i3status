@@ -11,6 +11,7 @@ general {
 
 order += "ethernet bnep0"
 order += "ethernet enp0s20u2"
+order += "wireless wlan0"
 order += "wireless wlp3s0"
 order += "wireless wlo1"
 order += "ethernet enp0s25"
@@ -19,6 +20,7 @@ order += "battery 0"
 #order += "battery 1"
 #order += "load"
 order += "cpu_usage"
+order += "memory"
 #order += "cpu_temperature 0"
 order += "volume master"
 order += "time"
@@ -30,6 +32,11 @@ ethernet bnep0 {
 
 ethernet enp0s20u2 {
         format_up = " u %ip "
+        format_down = ""
+}
+
+wireless wlan0 {
+        format_up = " w %ip @ %essid (%quality) "
         format_down = ""
 }
 
@@ -93,3 +100,10 @@ volume master {
         mixer = "Master"
         mixer_idx = 0
 }
+
+memory {
+       format = "☰ %available"
+       threshold_degraded = "10%"
+       format_degraded = "!! ☰ %available"
+}
+

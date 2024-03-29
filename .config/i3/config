@@ -1,0 +1,251 @@
+# i3 config file (v4)
+# Not a lot of modifications...
+
+# Use Meta as modifier
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# borders
+default_border pixel 1
+smart_borders on
+
+# default split
+default_orientation auto
+
+# Hide borders adjacent to the screen edges
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec rofi -show run
+# alt + space
+bindsym Mod1+space exec rofi -show drun
+bindsym $mod+period exec rofi -modi emoji -show emoji -kb-custom-1 Ctrl+c
+
+# switch between QWERTY and DVORAK
+bindsym $mod+F1 exec --no-startup-id "setxkbmap us dvp -option 'ctrl:nocaps,compose:ralt'"
+bindsym $mod+F2 exec --no-startup-id "setxkbmap us intl"
+bindsym $mod+F9 exec --no-startup-id "xdotool key Caps_Lock"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# move workspace to next window
+bindsym $mod+Shift+Control+h move workspace to output left
+bindsym $mod+Shift+Control+j move workspace to output down
+bindsym $mod+Shift+Control+k move workspace to output up
+bindsym $mod+Shift+Control+l move workspace to output right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Control+Left move workspace to output left
+bindsym $mod+Shift+Control+Down move workspace to output down
+bindsym $mod+Shift+Control+Up move workspace to output up
+bindsym $mod+Shift+Control+Right move workspace to output right
+
+# split in horizontal orientation
+bindsym $mod+z split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+q layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+s focus child
+
+# switch to workspace
+bindcode $mod+10 workspace 1t
+bindcode $mod+11 workspace 2w
+bindcode $mod+12 workspace 3c
+bindcode $mod+13 workspace 4m
+bindcode $mod+14 workspace 5r
+bindcode $mod+15 workspace 6ᗧ
+bindcode $mod+16 workspace 7🎸
+bindcode $mod+17 workspace 8🚀
+bindcode $mod+18 workspace 9🌈
+bindcode $mod+19 workspace 10🦆
+
+# move focused container to workspace
+bindcode $mod+Shift+10 move container to workspace 1t
+bindcode $mod+Shift+11 move container to workspace 2w
+bindcode $mod+Shift+12 move container to workspace 3c
+bindcode $mod+Shift+13 move container to workspace 4m
+bindcode $mod+Shift+14 move container to workspace 5r
+bindcode $mod+Shift+15 move container to workspace 6ᗧ
+bindcode $mod+Shift+16 move container to workspace 7🎸
+bindcode $mod+Shift+17 move container to workspace 8🚀
+bindcode $mod+Shift+18 move container to workspace 9🌈
+bindcode $mod+Shift+19 move container to workspace 10🦆
+
+# Pin a window to all workspaces
+bindcode $mod+Shift+21 sticky toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Runaway?' -b 'Runaway' 'i3-msg exit'"
+# lock (meta+shift+key-next-to-shift)
+bindcode $mod+Shift+52 exec i3lock -c 000000 -e
+#                           & sleep 5 && xset dpms force off # <<<--- Turn off the display after 5s
+# htop
+bindsym Control+Shift+Escape exec gnome-terminal -x htop
+# thunar
+bindsym  $mod+e exec thunar
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Colors
+client.background       #282828
+#                       border  bg      text    indicator
+client.focused          #0077aa #333333 #f2f1f0 #2e9ef4
+client.focused_inactive #335577 #222222 #f2f1f0 #484e50
+client.unfocused        #666666 #222222 #888888 #292d2e
+client.urgent           #d23d3d #f07746 #f2f1f0 #900000
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    colors {
+        statusline #f2f1f0
+        background #101010
+        #                  border  bg      text
+        focused_workspace  #666666 #202020 #66aabb
+        active_workspace   #101010 #202020 #666666
+        inactive_workspace #101010 #202020 #666666
+        urgent_workspace   #f07746 #202020 #f07746
+    }
+
+    font xft:DejaVu Sans Mono 9, FontAwesome 9
+    position top
+    status_command i3status -c ~/.i3/i3status | ~/.config/i3/i3status_wrapper.py
+    tray_output primary
+    strip_workspace_numbers yes
+    #font xft:Noto Emoji 9, pango:DejaVu Sans Mono 9, FontAwesome 9
+    #position top
+    #status_command i3status-rs ~/.i3/i3status-rust.toml
+}
+
+
+# Auto execs
+
+# Applets and services
+#exec --no-startup-id gnome-settings-daemon
+#exec --no-startup-id /usr/bin/gnome-keyring-daemon --daemonize --login
+#exec --no-startup-id nm-applet
+#exec --no-startup-id gnome-sound-applet
+#exec --no-startup-id bluetooth-applet
+
+# Programs
+#exec --no-startup-id minidlna
+#exec --no-startup-id dropbox start
+#exec --no-startup-id everpad
+
+# Set background
+#exec --no-startup-id xsetroot -solid "#080008"
+exec --no-startup-id eval $(cat ~/.fehbg)
+
+# XFCE4 utilities
+exec --no-startup-id xfce4-session
+for_window [class="xfce4-notifyd"] floating enable;border none
+no_focus [class="xfce4-notifyd"]
+for_window [title="^Bluetooth Devices$"] floating enable
+# shutdown menu
+bindsym $mod+Shift+p exec xfce4-session-logout
+# xfce settings
+#bindsym $mod+Shift+c exec xfce4-settings-manager
+
+# Load Xresources
+exec xrdb -merge ~/.Xresources
+exec /bin/bash ~/.fehbg
+
+# Thinkpad TrackPoint + middle button = wheel
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+exec xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Constant Deceleration" 0.95
+
+# Dell trackpoint + middle button = wheel
+exec xinput set-prop "DELL08B8:00 0488:121F Mouse" "libinput Scroll Method Enabled" 0 0 1
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# Lock before sleeping
+exec --no-startup-id xss-lock -- i3lock -c 000000 -d
