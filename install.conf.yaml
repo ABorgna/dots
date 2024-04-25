@@ -44,14 +44,15 @@
     ~/.ycm_extra_conf.py: .ycm_extra_conf.py
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
+    ~/.zshrc: .zshrc
 
 - shell:
   - mkdir -p ~/src
-  - mkdir -p ~/.Trash
+    #- mkdir -p ~/.Trash
   - [git submodule update --init --recursive, Installing submodules]
     # "C-h works as <BS>" neovim workaround
     # https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
-  - infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti && tic ~/$TERM.ti
+    #- infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti && tic ~/$TERM.ti
     #Tmux plugins
   - ~/.tmux/plugins/tpm/bin/install_plugins; true
   - ~/.tmux/plugins/tpm/bin/update_plugins all; true

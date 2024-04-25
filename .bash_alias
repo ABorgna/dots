@@ -13,7 +13,7 @@ alias ..='cd ..'
 alias cls='clear' # C-l works too if you are not in tmux
 
 # Conditional aliases (defaults must be escaped or else the alias will be called)
-alias vim='runDefault nvim \\vim'
+alias vim='nvim'
 
 #alias syn='synergyc --no-restart --enable-crypto 192.168.250.200'
 
