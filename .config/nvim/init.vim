@@ -98,18 +98,18 @@ vnoremap <leader>cs <Plug>(coc-codeaction-curser)
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " ================ Directories ======================
-set backup
-silent !mkdir ~/.config/nvim/backups/back/ > /dev/null 2>&1
-set backupdir=~/.config/nvim/backups/back/
-silent !mkdir ~/.config/nvim/backups/swp/ > /dev/null 2>&1
-set dir=~/.config/nvim/backups/swp/
+"set backup
+"silent !mkdir ~/.config/nvim/backups/back/ > /dev/null 2>&1
+"set backupdir=~/.config/nvim/backups/back/
+"silent !mkdir ~/.config/nvim/backups/swp/ > /dev/null 2>&1
+"set dir=~/.config/nvim/backups/swp/
 
 " Persistent Undo
-if has('persistent_undo')
-    silent !mkdir ~/.config/nvim/backups/undo/ > /dev/null 2>&1
-    set undodir=~/.config/nvim/backups/undo/
-    set undofile
-    endif
+"if has('persistent_undo')
+"   silent !mkdir ~/.config/nvim/backups/undo/ > /dev/null 2>&1
+"   set undodir=~/.config/nvim/backups/undo/
+"   set undofile
+"   endif
 
 " ================ Plugins ==========================
 call plug#begin('~/.config/nvim/plugged')
