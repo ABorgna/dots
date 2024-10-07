@@ -1,9 +1,10 @@
 [user]
-	name = Agustin Borgna
-	email = agustinborgna@gmail.com
+	name = Agustín Borgna
+	email = agustin.borgna@quantinuum.com
 	signingkey = EA62514FA56C940A
 [push]
     default = simple
+	autoSetupRemote = true
 
 [alias]
     c = commit
