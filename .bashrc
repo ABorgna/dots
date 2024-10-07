@@ -119,7 +119,7 @@ function __git_branch(){
 
 PS1="\[${psColor}\]${HOSTNAME:0:1}${HOSTNAME//[a-z]} \w \$(__git_branch \"\[${psColor}\]\")> \[${NC}\]"
 
-export PATH=/home/aborgna/.local/bin:/home/aborgna/.gem/ruby/2.3.0/bin:/usr/extbin:/home/aborgna/bin:$PATH
+export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:/home/aborgna/.local/bin:/home/aborgna/.gem/ruby/2.3.0/bin:/usr/extbin:/home/aborgna/bin:$PATH
 export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HISTIGNORE="&:bg:fg:ll:h"
 export HISTTIMEFORMAT="$(echo -e ${BCyan})[%d/%m %H:%M:%S]$(echo -e ${NC}) "

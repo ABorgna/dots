@@ -13,7 +13,7 @@ alias ..='cd ..'
 alias cls='clear' # C-l works too if you are not in tmux
 
 # Conditional aliases (defaults must be escaped or else the alias will be called)
-alias vim='runDefault nvim \\vim'
+alias vim=nvim
 
 #alias syn='synergyc --no-restart --enable-crypto 192.168.250.200'
 
@@ -23,8 +23,8 @@ alias ta='tmux attach'
 alias tns='tmux new-session -s'
 
 # Pretty-print of some PATH variables:
-alias path='echo -e ${PATH//:/\\n}'
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+#alias path='echo -e ${PATH//:/\\n}'
+#alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 # Makes a more readable output.
 alias du='du -kh'
@@ -34,11 +34,11 @@ alias free='free -h'
 alias dd='dd status=progress'
 
 # Compilers
-function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
-alias watchmake='while true; do make --silent; sleep 1; done'
+#function rung++ () { g++ -g -O2 -std=gnu++11 -o /tmp/$1.o $1 && /tmp/$1.o; }
+#alias watchmake='while true; do make --silent; sleep 1; done'
 
 # Randoms
-alias cloak='history -d $((HISTCMD-1)) &&'
+#alias cloak='history -d $((HISTCMD-1)) &&'
 alias c='cloak'
 alias clk='tty-clock -c -C 7 -d 40000000'
 alias ftn='fortune -ec'
@@ -76,7 +76,3 @@ alias CAPS='xdotool key Caps_Lock'
 #alias ghc='stack ghc'
 #alias ghci='stack ghci'
 alias bazelt='bazel test --test_output=streamed'
-
-function ghciwith () {
-    nix-shell -p "haskellPackages.ghcWithPackages (pkgs: with pkgs; [$*])" --run ghci
-}
