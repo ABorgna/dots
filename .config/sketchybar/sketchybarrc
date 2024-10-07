@@ -1,0 +1,70 @@
+#!/usr/bin/env zsh
+
+FONT_FACE="Maple Mono"
+#FONT_FACE="Hack Nerd Font"
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+# Colors
+COLOR_BG = 0xffaa8844
+COLOR_BORDER = 0xff88442
+
+sketchybar --bar \
+    height=32 \
+    color=0x0000000 \
+    margin=0 \
+    sticky=on \
+    padding_left=23 \
+    padding_right=23 \
+    notch_width=188 \
+    display=main \
+    \
+    --default \
+    background.color=$COLOR_BG \
+    background.corner_radius=5 \
+    background.padding_right=5 \
+    background.height=26 \
+    border.color=$COLOR_BORDER \
+    icon.font="$FONT_FACE:Medium:15.0" \
+    icon.padding_left=5 \
+    icon.padding_right=5 \
+    label.font="$FONT_FACE:Medium:13.0" \
+    label.color=0xffcad3f5 \
+    label.y_offset=0 \
+    label.padding_left=0 \
+    label.padding_right=5 \
+    \
+    --set front_app \
+    background.color=0x0000000 \
+    background.padding_left=0 \
+    background.padding_right=0 \
+    icon.y_offset=1 \
+    label.drawing=yes \
+    script="$PLUGIN_DIR/front_app.sh" \
+    \
+    --add item clock right \
+    --set clock \
+    background.color=$COLOR_BG \
+    icon=󰃰 \
+    icon.color=0xffed8796 \
+    update_freq=10 \
+    script="$PLUGIN_DIR/clock.sh" \
+    \
+    --add item battery right \
+    --set battery \
+    update_freq=20 \
+    script="$PLUGIN_DIR/battery.sh" \
+    \
+    --add item volume right \
+    --set volume \
+    icon.color=0xff8aadf4 \
+    label.drawing=true \
+    script="$PLUGIN_DIR/volume.sh" \
+    --subscribe volume volume_change
+
+# osascript -e 'quit app "Rectangle"'
+# open -a Rectangle
+
+##### Finalizing Setup #####
+sketchybar --update
+sketchybar --trigger space_change

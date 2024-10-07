@@ -15,6 +15,7 @@
     ~/.config/redshift: .config/redshift/
     ~/.config/rofi: .config/rofi/
     ~/.config/scc: .config/scc/
+    ~/.config/sketchybar: .config/sketchybar
     ~/.config/touchegg: .config/touchegg/
     ~/.config/youtube-dl: .config/youtube-dl/
     ~/.vimrc: .config/nvim/init.vim
