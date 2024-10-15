@@ -22,14 +22,5 @@ update_space() {
         icon.padding_right=$ICON_PADDING_RIGHT
 }
 
-case "$SENDER" in
-"mouse.clicked")
-    # Reload sketchybar
-    sketchybar --remove '/.*/'
-    source $HOME/.config/sketchybar/sketchybarrc
-    ;;
-*)
-    update_space
-    ;;
-esac
+update_space
 
