@@ -76,7 +76,16 @@ sketchybar --bar "${bar[@]}" \
     --subscribe volume volume_change \
     \
     --add bracket right_bracket clock battery volume \
-    --set right_bracket "${bracket[@]}"
+    --set right_bracket "${bracket[@]}" \
+    \
+    --add item media right \
+    --set media \
+        icon.drawing=false \
+        script="$PLUGIN_DIR/media.sh" \
+        scroll_texts=true \
+        max_chars=10 \
+        width=390 \
+    --subscribe media media_change \
 
 
 # osascript -e 'quit app "Rectangle"'
