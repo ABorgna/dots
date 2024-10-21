@@ -3,12 +3,13 @@
       create: true
       relink: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
     ~/.config/alacritty: .config/alacritty/
     ~/.config/coc/extensions/package.json: .config/coc/extensions/package.json
     ~/.config/environment.d: .config/environment.d
+    ~/.config/fish: .config/fish/
     ~/.config/nvim: .config/nvim/
     ~/.config/pboy: .config/pboy/
     ~/.config/ranger: .config/ranger/
@@ -16,7 +17,6 @@
     ~/.config/rofi: .config/rofi/
     ~/.config/scc: .config/scc/
     ~/.config/sketchybar: .config/sketchybar
-    ~/.config/touchegg: .config/touchegg/
     ~/.config/youtube-dl: .config/youtube-dl/
     ~/.vimrc: .config/nvim/init.vim
     ~/.vim: .config/nvim/
@@ -46,15 +46,14 @@
     ~/.Xresources: .Xresources
 
 - shell:
-  - mkdir -p ~/src
-  - mkdir -p ~/.Trash
-  - [git submodule update --init --recursive, Installing submodules]
-    # "C-h works as <BS>" neovim workaround
-    # https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
-  - infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti && tic ~/$TERM.ti
-    #Tmux plugins
-  - ~/.tmux/plugins/tpm/bin/install_plugins; true
-  - ~/.tmux/plugins/tpm/bin/update_plugins all; true
-    # Coc plugins
-  - cd ~/.config/coc/extensions/ && yarn --emoji true
-
+    - mkdir -p ~/src
+    - mkdir -p ~/.Trash
+    - [git submodule update --init --recursive, Installing submodules]
+      # "C-h works as <BS>" neovim workaround
+      # https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+    - infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti && tic ~/$TERM.ti
+      #Tmux plugins
+    - ~/.tmux/plugins/tpm/bin/install_plugins; true
+    - ~/.tmux/plugins/tpm/bin/update_plugins all; true
+      # Coc plugins
+    - cd ~/.config/coc/extensions/ && yarn --emoji true
