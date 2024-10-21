@@ -83,8 +83,7 @@ sketchybar --bar "${bar[@]}" \
         icon.drawing=false \
         script="$PLUGIN_DIR/media.sh" \
         scroll_texts=true \
-        max_chars=10 \
-        width=390 \
+        label.max_chars=60 \
     --subscribe media media_change \
 
 
