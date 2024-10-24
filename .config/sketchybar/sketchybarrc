@@ -84,6 +84,7 @@ sketchybar --bar "${bar[@]}" \
         script="$PLUGIN_DIR/media.sh" \
         scroll_texts=true \
         label.max_chars=60 \
+        label.scroll_duration=256 \
     --subscribe media media_change \
 
 
