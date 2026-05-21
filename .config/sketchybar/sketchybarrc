@@ -17,7 +17,7 @@ bar=(
     padding_left=23
     padding_right=23
     notch_width=188
-    display=main
+    display=all
 )
 
 default=(

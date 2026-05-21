@@ -21,6 +21,21 @@
 .config/ranger/bookmarks
 .config/ranger/tagged
 
+# Valgrind stuff
+bin/include/*
+bin/lib/*
+bin/libexec/*
+bin/callgrind_annotate
+bin/callgrind_control
+bin/cg_annotate
+bin/cg_diff
+bin/cg_merge
+bin/ms_print
+bin/valgrind
+bin/valgrind-listener
+bin/valgrind-di-server
+bin/vgdb
+
 *.swp
 
 *.secret

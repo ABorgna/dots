@@ -54,18 +54,12 @@ alias egrep='grep -E'
 
 # The ls family
 #   Add colors for filetype and  human-readable sizes
-alias l='command ls -hp --color --group-directories-first'
+alias l='command eza --group-directories-first'
 #   Directories first, with alphanumeric sorting:
-alias ll='l -lAcv'
-alias ls="l -lv"
-alias la='l -A'           #  Show hidden files.
-alias lx='l -lXB'         #  Sort by extension.
-alias lk='l -lSr'         #  Sort by size, biggest last.
-alias lt='l -ltr'         #  Sort by date, most recent last.
-alias lc='l -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='l -ltur'        #  Sort by/show access time,most recent last.
-alias lr='ll -R'           #  Recursive ls.
-alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+alias ll='l -la'
+alias ls="l -l"
+alias la='l -a'           #  Show hidden files.
+alias tree='l --tree'
 
 # Swap key bindings, and toggle caps lock
 alias aoe='setxkbmap us intl'
@@ -76,3 +70,10 @@ alias CAPS='xdotool key Caps_Lock'
 #alias ghc='stack ghc'
 #alias ghci='stack ghci'
 alias bazelt='bazel test --test_output=streamed'
+
+# MacOS
+# Enable/disable TouchID
+alias touchoff="bioutil -w -u 0"
+alias touchon="bioutil -w -u 1"
+alias touchreset="touchoff && touchon"
+

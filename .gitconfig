@@ -8,7 +8,9 @@
 
 [alias]
     c = commit
+    cnv = commit --no-verify
     ca = commit --amend
+    canv = commit --amend --no-verify
     co = checkout
     p = push
     pf = push --force-with-lease
