@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+usage() {
+    cat <<'EOF'
+Usage: git clean-branches [OPTIONS]
+
+Delete local branches whose configured upstream is gone.
+
+Options:
+  -n, --dry-run   Print branches that would be deleted, but do not delete them.
+  -y, --yes       Delete without prompting.
+  -p, --prune     Run `git fetch --all --prune` before checking branches.
+  -h, --help      Show this help.
+EOF
+}
+
+dry_run=false
+assume_yes=false
+prune=false
+
+while (($#)); do
+    case "$1" in
+        -n | --dry-run)
+            dry_run=true
+            ;;
+        -y | --yes)
+            assume_yes=true
+            ;;
+        -p | --prune)
+            prune=true
+            ;;
+        -h | --help)
+            usage
+            exit 0
+            ;;
+        *)
+            printf 'unknown option: %s\n\n' "$1" >&2
+            usage >&2
+            exit 2
+            ;;
+    esac
+    shift
+done
+
+git rev-parse --git-dir >/dev/null
+
+if "$prune"; then
+    git fetch --all --prune
+fi
+
+checked_out=()
+while IFS= read -r branch; do
+    checked_out+=("$branch")
+done < <(git worktree list --porcelain | sed -n 's#^branch refs/heads/##p')
+
+is_checked_out() {
+    local candidate=$1
+    local branch
+    for branch in "${checked_out[@]}"; do
+        [[ "$branch" == "$candidate" ]] && return 0
+    done
+    return 1
+}
+
+gone=()
+while IFS= read -r -d '' branch && IFS= read -r -d '' upstream_track; do
+    if [[ "$upstream_track" == "[gone]" ]]; then
+        gone+=("$branch")
+    fi
+done < <(git for-each-ref --format='%(refname:short)%00%(upstream:track)%00' refs/heads)
+
+to_delete=()
+skipped=()
+for branch in "${gone[@]}"; do
+    if is_checked_out "$branch"; then
+        skipped+=("$branch")
+    else
+        to_delete+=("$branch")
+    fi
+done
+
+if ((${#to_delete[@]} == 0)); then
+    printf 'No local branches with gone upstreams to delete.\n'
+    if ((${#skipped[@]})); then
+        printf '\nSkipped checked-out branches:\n'
+        printf '  %s\n' "${skipped[@]}"
+    fi
+    exit 0
+fi
+
+printf 'Local branches with gone upstreams:\n'
+printf '  %s\n' "${to_delete[@]}"
+
+if ((${#skipped[@]})); then
+    printf '\nSkipped checked-out branches:\n'
+    printf '  %s\n' "${skipped[@]}"
+fi
+
+if "$dry_run"; then
+    exit 0
+fi
+
+if ! "$assume_yes"; then
+    printf '\nDelete these branches with `git branch -D`? [y/N] '
+    read -r answer
+    case "$answer" in
+        y | Y | yes | YES)
+            ;;
+        *)
+            printf 'Aborted.\n'
+            exit 1
+            ;;
+    esac
+fi
+
+git branch -D -- "${to_delete[@]}"
